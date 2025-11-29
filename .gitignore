@@ -37,3 +37,7 @@ next-env.d.ts
 
 # workspace stuff
 *.code-workspace
+
+# agent
+.agent
+
