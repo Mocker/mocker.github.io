@@ -37,3 +37,6 @@ next-env.d.ts
 
 # workspace / antigravity stuff
 *.code-workspace
+
+# agent
+.agent
