@@ -1,0 +1,103 @@
+---
+---
+<header class="glass-nav">
+  <div class="container nav-container">
+    <a href="/" class="logo-link" aria-label="Ryan Guthrie Home">
+      <img 
+        src="/assets/modern_pisces_logo.png" 
+        alt="Ryan Guthrie Pisces Logo" 
+        class="logo-img"
+        width="40"
+        height="40"
+      />
+      <span class="logo-text">Ryan Guthrie<span class="accent-dot">.</span></span>
+    </a>
+    
+    <nav aria-label="Main Navigation">
+      <ul class="nav-links">
+        <li><a href="#about" class="nav-item">01. About</a></li>
+        <li><a href="#projects" class="nav-item">02. Projects</a></li>
+        <li><a href="#resume" class="nav-item">03. Resume</a></li>
+        <li><a href="#contact" class="nav-item">04. Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<style>
+  .nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+
+  .logo-link {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 1.25rem;
+    color: #ffffff;
+  }
+
+  .logo-img {
+    filter: drop-shadow(0 0 8px rgba(19, 200, 236, 0.4));
+    transition: transform var(--transition-smooth);
+  }
+
+  .logo-link:hover .logo-img {
+    transform: rotate(15deg) scale(1.1);
+  }
+
+  .logo-text {
+    letter-spacing: -0.02em;
+  }
+
+  .accent-dot {
+    color: var(--accent-cyan);
+  }
+
+  .nav-links {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+    margin: 0;
+    padding: 0;
+  }
+
+  .nav-item {
+    font-family: var(--font-display);
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--text-main);
+    padding: 0.5rem 0;
+    position: relative;
+  }
+
+  .nav-item:hover {
+    color: var(--accent-cyan);
+  }
+
+  .nav-item::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background: var(--accent-gradient);
+    transition: width var(--transition-fast);
+  }
+
+  .nav-item:hover::after {
+    width: 100%;
+  }
+
+  @media (max-width: 768px) {
+    .nav-links {
+      display: none; /* Can enhance with mobile menu drawer later */
+    }
+  }
+</style>

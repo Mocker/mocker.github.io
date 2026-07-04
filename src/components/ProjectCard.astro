@@ -1,0 +1,119 @@
+---
+interface Props {
+  title: string;
+  description: string;
+  tags: string[];
+  liveUrl?: string;
+  githubUrl?: string;
+  featured?: boolean;
+}
+
+const { title, description, tags, liveUrl, githubUrl, featured = false } = Astro.props;
+---
+
+<div class={`glass-card project-card ${featured ? 'featured' : ''}`} id={`project-${title.toLowerCase().replace(/\s+/g, '-')}`}>
+  <div class="card-header">
+    <div class="folder-icon" aria-hidden="true">
+      <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather feather-folder"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
+    </div>
+    
+    <div class="card-links">
+      {githubUrl && (
+        <a href={githubUrl} target="_blank" rel="noopener noreferrer" aria-label={`GitHub repository for ${title}`} class="icon-link">
+          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+        </a>
+      )}
+      {liveUrl && (
+        <a href={liveUrl} target="_blank" rel="noopener noreferrer" aria-label={`Live demo for ${title}`} class="icon-link">
+          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+        </a>
+      )}
+    </div>
+  </div>
+
+  <h3 class="project-title">
+    {liveUrl ? <a href={liveUrl} target="_blank" rel="noopener noreferrer">{title}</a> : title}
+  </h3>
+  
+  <p class="project-desc">{description}</p>
+  
+  <div class="project-tags">
+    {tags.map((tag) => (
+      <span class="tag-pill">{tag}</span>
+    ))}
+  </div>
+</div>
+
+<style>
+  .project-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .project-card.featured {
+    border-color: rgba(19, 200, 236, 0.3);
+    background: linear-gradient(145deg, rgba(23, 27, 34, 0.8), rgba(31, 37, 47, 0.6));
+  }
+
+  .card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+  }
+
+  .folder-icon {
+    color: var(--accent-cyan);
+    opacity: 0.9;
+  }
+
+  .card-links {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+  }
+
+  .icon-link {
+    color: var(--text-muted);
+    transition: color var(--transition-fast), transform var(--transition-fast);
+  }
+
+  .icon-link:hover {
+    color: var(--accent-cyan);
+    transform: translateY(-2px);
+  }
+
+  .project-title {
+    font-size: 1.5rem;
+    margin-bottom: 0.75rem;
+    color: #ffffff;
+    transition: color var(--transition-fast);
+  }
+
+  .project-title a {
+    color: inherit;
+  }
+
+  .project-title a:hover {
+    color: var(--accent-cyan);
+  }
+
+  .project-desc {
+    color: var(--text-muted);
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    flex-grow: 1;
+  }
+
+  .project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin-top: auto;
+  }
+</style>

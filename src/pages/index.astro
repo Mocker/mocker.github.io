@@ -1,0 +1,391 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ProjectCard from '../components/ProjectCard.astro';
+
+const projects = [
+  {
+    title: "Locale Planner (Fluid Architect)",
+    description: "AI-powered planning and workspace orchestration tool built with Material-3 soft zoning, organic asymmetry, and glassmorphism UI.",
+    tags: ["TypeScript", "React", "Google Stitch", "Tailwind CSS"],
+    liveUrl: "https://github.com",
+    githubUrl: "https://github.com",
+    featured: true
+  },
+  {
+    title: "Ryan-OS Pipeline Tools",
+    description: "CLI and automation suite designed for agentic software workflows, system diagnostics, and high-velocity engineering pipelines.",
+    tags: ["Node.js", "TypeScript", "Astro", "Cloudflare Workers"],
+    githubUrl: "https://github.com",
+    featured: true
+  },
+  {
+    title: "Worm Compost Match-3 Prototype",
+    description: "Interactive HTML5 Canvas / WebGL game dev prototype demonstrating procedural level generation, dynamic physics, and micro-animations.",
+    tags: ["Game Dev", "WebGL", "TypeScript", "HTML5 Canvas"],
+    liveUrl: "https://github.com",
+    githubUrl: "https://github.com",
+    featured: false
+  },
+  {
+    title: "SereneNews Aggregator",
+    description: "High-performance static news feed engineered with real-time edge hydration, clean typography, and curated dark mode aesthetics.",
+    tags: ["Astro", "SSR", "Cloudflare Pages", "Vanilla CSS"],
+    liveUrl: "https://github.com",
+    githubUrl: "https://github.com",
+    featured: false
+  }
+];
+
+const skills = [
+  "TypeScript", "JavaScript (ES6+)", "Astro SSG", "React", "Next.js", 
+  "Node.js", "Cloudflare Workers", "Tailwind CSS", "Vanilla CSS / Tokens", 
+  "UI/UX Design", "System Architecture", "Google Stitch MCP", "Git Flow", "Python"
+];
+---
+
+<BaseLayout>
+  <!-- Hero Section -->
+  <section class="hero container" aria-labelledby="hero-title">
+    <div class="hero-content">
+      <p class="greeting">Hi, my name is</p>
+      <h1 id="hero-title" class="name-title">Ryan Guthrie<span class="accent">.</span></h1>
+      <h2 class="role-title">I build things for the web.</h2>
+      <p class="hero-desc">
+        I'm a full-stack software engineer specializing in building (and occasionally designing) 
+        exceptional, high-performance digital experiences. Currently focused on architecting accessible, 
+        human-centered web applications and blazing-fast static sites.
+      </p>
+      <div class="hero-ctas">
+        <a href="#projects" class="btn-primary">Check out my work</a>
+        <a href="#about" class="btn-secondary">Learn more</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="section container" aria-labelledby="about-title">
+    <div class="section-heading">
+      <h2 id="about-title" class="section-title"><span class="section-num">01.</span> About Me</h2>
+      <div class="heading-line"></div>
+    </div>
+    
+    <div class="about-grid">
+      <div class="about-text glass-card">
+        <p>
+          Hello! My name is Ryan and I enjoy creating digital experiences that live on the internet. 
+          My journey in web development started from a passion for understanding how systems tick under the hood—from 
+          hacking together custom layouts to engineering scalable software architectures.
+        </p>
+        <p>
+          Fast-forward to today, and I've had the privilege of developing across modern engineering pipelines, 
+          exploring procedural game design, and building tools that bridge the gap between complex backend logic 
+          and intuitive, human-first user interfaces.
+        </p>
+        <p>
+          I prioritize **first-principles reasoning**, **clean typography**, and **high-performance engineering** 
+          (like leveraging Astro for zero-JS static generation). Here are a few technologies and concepts I've been working with recently:
+        </p>
+      </div>
+      
+      <div class="skills-cloud glass-card">
+        <h3 class="skills-title">Technical Arsenal &amp; Tools</h3>
+        <div class="tags-wrapper">
+          {skills.map((skill) => (
+            <span class="tag-pill skill-tag">{skill}</span>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects" class="section container" aria-labelledby="projects-title">
+    <div class="section-heading">
+      <h2 id="projects-title" class="section-title"><span class="section-num">02.</span> Featured Projects</h2>
+      <div class="heading-line"></div>
+    </div>
+    
+    <div class="projects-grid">
+      {projects.map((project) => (
+        <ProjectCard {...project} />
+      ))}
+    </div>
+  </section>
+
+  <!-- Resume Summary Section -->
+  <section id="resume" class="section container" aria-labelledby="resume-title">
+    <div class="section-heading">
+      <h2 id="resume-title" class="section-title"><span class="section-num">03.</span> Experience &amp; Resume</h2>
+      <div class="heading-line"></div>
+    </div>
+    
+    <div class="resume-card glass-card">
+      <div class="resume-header">
+        <div>
+          <h3 class="resume-role">Senior Full-Stack Software Engineer &amp; Architect</h3>
+          <p class="resume-meta">System Design &middot; Modern Web Pipelines &middot; UI/UX Craftsmanship</p>
+        </div>
+        <a href="#contact" class="btn-primary resume-btn">Request Full Resume PDF</a>
+      </div>
+      <p class="resume-summary">
+        Experienced in guiding software architecture from first-principles concepts through deployment. 
+        Adept at managing git-flow version control, edge deployments via Cloudflare, and integrating agentic AI tooling 
+        (like Google Stitch and Antigravity) into production workflows.
+      </p>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="section container contact-section" aria-labelledby="contact-title">
+    <div class="contact-card glass-card">
+      <p class="contact-sub"><span class="section-num">04.</span> What's Next?</p>
+      <h2 id="contact-title" class="contact-title">Get In Touch</h2>
+      <p class="contact-desc">
+        Whether you have a question about my architecture notes, want to discuss a new project opportunity, 
+        or just want to say hi, my inbox is always open. I'll get back to you as soon as possible!
+      </p>
+      <a href="mailto:contact@ryanguthrie.dev" class="btn-primary contact-btn">Say Hello</a>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  /* Hero Section */
+  .hero {
+    min-height: calc(100vh - var(--nav-height));
+    display: flex;
+    align-items: center;
+    padding-top: 2rem;
+    padding-bottom: 6rem;
+  }
+
+  .hero-content {
+    max-width: 800px;
+  }
+
+  .greeting {
+    font-family: var(--font-display);
+    color: var(--accent-cyan);
+    font-size: 1.125rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    letter-spacing: 0.05em;
+  }
+
+  .name-title {
+    color: #ffffff;
+    margin-bottom: 0.5rem;
+  }
+
+  .role-title {
+    color: var(--text-muted);
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+  }
+
+  .hero-desc {
+    max-width: 600px;
+    font-size: 1.2rem;
+    line-height: 1.7;
+    margin-bottom: 2.5rem;
+  }
+
+  .hero-ctas {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+  }
+
+  .btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.875rem 2rem;
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 1rem;
+    color: var(--text-main);
+    background: transparent;
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-full);
+    transition: all var(--transition-smooth);
+  }
+
+  .btn-secondary:hover {
+    border-color: var(--accent-cyan);
+    color: var(--accent-cyan);
+    background: rgba(19, 200, 236, 0.08);
+  }
+
+  /* Section Headings */
+  .section {
+    padding-top: 6rem;
+    padding-bottom: 4rem;
+  }
+
+  .section-heading {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+  }
+
+  .section-title {
+    font-size: clamp(1.75rem, 3vw, 2.5rem);
+    white-space: nowrap;
+    margin-bottom: 0;
+  }
+
+  .section-num {
+    color: var(--accent-cyan);
+    font-family: var(--font-display);
+    font-size: clamp(1.25rem, 2.5vw, 1.75rem);
+    font-weight: 500;
+    margin-right: 0.5rem;
+  }
+
+  .heading-line {
+    width: 100%;
+    height: 1px;
+    background: var(--glass-border);
+    max-width: 300px;
+  }
+
+  /* About Section */
+  .about-grid {
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+    gap: 2rem;
+    align-items: start;
+  }
+
+  .about-text p:last-child {
+    margin-bottom: 0;
+  }
+
+  .skills-cloud {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .skills-title {
+    font-size: 1.25rem;
+    color: #ffffff;
+    margin-bottom: 0.5rem;
+  }
+
+  .tags-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .skill-tag {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+  }
+
+  /* Projects Section */
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    gap: 2rem;
+  }
+
+  /* Resume Section */
+  .resume-card {
+    padding: 2.5rem;
+  }
+
+  .resume-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--glass-border);
+  }
+
+  .resume-role {
+    font-size: 1.5rem;
+    color: #ffffff;
+    margin-bottom: 0.5rem;
+  }
+
+  .resume-meta {
+    color: var(--accent-cyan);
+    font-weight: 500;
+    margin: 0;
+  }
+
+  .resume-summary {
+    font-size: 1.1rem;
+    margin: 0;
+  }
+
+  /* Contact Section */
+  .contact-section {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .contact-card {
+    padding: 4rem 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .contact-sub {
+    font-family: var(--font-display);
+    color: var(--accent-cyan);
+    font-weight: 600;
+    margin-bottom: 1rem;
+  }
+
+  .contact-title {
+    font-size: clamp(2.5rem, 5vw, 3.5rem);
+    margin-bottom: 1.5rem;
+  }
+
+  .contact-desc {
+    max-width: 550px;
+    margin-bottom: 2.5rem;
+  }
+
+  .contact-btn {
+    padding: 1rem 3rem;
+    font-size: 1.1rem;
+  }
+
+  /* Responsive Design */
+  @media (max-width: 900px) {
+    .about-grid {
+      grid-template-columns: 1fr;
+    }
+    
+    .resume-header {
+      flex-direction: column;
+      align-items: stretch;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .hero {
+      padding-bottom: 3rem;
+    }
+    
+    .hero-ctas {
+      flex-direction: column;
+      align-items: stretch;
+    }
+    
+    .projects-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

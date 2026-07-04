@@ -1,0 +1,211 @@
+/* ==========================================================================
+   AstroPortfolio: Design Tokens & Global Styles
+   Theme: Ocean Glass Minimalist (Dark Mode with Cyan/Teal Accents)
+   Typography: Outfit (Display/Headings) + Inter (Body/Readable Text)
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;500;600;700&display=swap');
+
+:root {
+  /* Color Palette - Curated for Comfortable Readability & Rich Aesthetics */
+  --bg-base: #0f1115;
+  --bg-surface: #171b22;
+  --bg-surface-elevated: #1f252f;
+  
+  --text-main: #f0f4f8;        /* Soft white for primary reading comfort */
+  --text-muted: #9ba1a6;       /* Balanced grey for secondary text */
+  --text-accent: #13c8ec;      /* Cyan highlight */
+  
+  --accent-cyan: #13c8ec;
+  --accent-teal: #00f2fe;
+  --accent-purple: #8a2be2;
+  --accent-gradient: linear-gradient(135deg, var(--accent-cyan), var(--accent-purple));
+  
+  /* Glassmorphism Tokens */
+  --glass-bg: rgba(23, 27, 34, 0.65);
+  --glass-bg-hover: rgba(31, 37, 47, 0.75);
+  --glass-border: rgba(255, 255, 255, 0.08);
+  --glass-border-hover: rgba(19, 200, 236, 0.4);
+  --glass-blur: 16px;
+  
+  /* Typography */
+  --font-display: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  
+  /* Spacing & Layout */
+  --max-width: 1200px;
+  --nav-height: 80px;
+  --radius-sm: 8px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --radius-full: 9999px;
+  
+  /* Transitions */
+  --transition-fast: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-smooth: 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ==========================================================================
+   CSS Reset & Base Styles
+   ========================================================================== */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: var(--bg-base);
+  color: var(--text-main);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.65; /* Comfortable reading spacing */
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  min-height: 100vh;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* Ambient Background Glow (Ocean Vibe) */
+body::before {
+  content: '';
+  position: fixed;
+  top: -20%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80vw;
+  height: 60vh;
+  background: radial-gradient(circle, rgba(19, 200, 236, 0.12) 0%, rgba(138, 43, 226, 0.08) 50%, transparent 80%);
+  z-index: -1;
+  pointer-events: none;
+  filter: blur(80px);
+}
+
+/* Typography Hierarchy */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  line-height: 1.25;
+  color: #ffffff;
+  margin-bottom: 1rem;
+}
+
+h1 {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  letter-spacing: -0.02em;
+}
+
+h2 {
+  font-size: clamp(2rem, 4vw, 3rem);
+  letter-spacing: -0.01em;
+}
+
+h3 {
+  font-size: clamp(1.5rem, 3vw, 2.25rem);
+}
+
+p {
+  color: var(--text-muted);
+  margin-bottom: 1.5rem;
+  font-size: 1.125rem;
+}
+
+a {
+  color: var(--accent-cyan);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+a:hover {
+  color: var(--accent-teal);
+}
+
+/* ==========================================================================
+   Utility Classes & Components
+   ========================================================================== */
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* Glass Card */
+.glass-card {
+  background: var(--glass-bg);
+  backdrop-filter: blur(var(--glass-blur));
+  -webkit-backdrop-filter: blur(var(--glass-blur));
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-md);
+  padding: 2rem;
+  transition: all var(--transition-smooth);
+}
+
+.glass-card:hover {
+  background: var(--glass-bg-hover);
+  border-color: var(--glass-border-hover);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.3), 0 0 20px rgba(19, 200, 236, 0.15);
+}
+
+/* Glass Navigation Bar */
+.glass-nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(15, 17, 21, 0.8);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--glass-border);
+  height: var(--nav-height);
+  display: flex;
+  align-items: center;
+}
+
+/* Buttons & CTAs */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.875rem 2rem;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1rem;
+  color: #ffffff;
+  background: var(--accent-gradient);
+  border: none;
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  transition: all var(--transition-smooth);
+  box-shadow: 0 4px 15px rgba(19, 200, 236, 0.3);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 25px rgba(19, 200, 236, 0.5), 0 0 15px rgba(138, 43, 226, 0.4);
+  color: #ffffff;
+}
+
+/* Tag / Skill Pill */
+.tag-pill {
+  display: inline-block;
+  padding: 0.35rem 0.85rem;
+  font-size: 0.85rem;
+  font-family: var(--font-display);
+  font-weight: 500;
+  color: var(--accent-cyan);
+  background: rgba(19, 200, 236, 0.1);
+  border: 1px solid rgba(19, 200, 236, 0.25);
+  border-radius: var(--radius-full);
+  margin: 0.25rem;
+  transition: all var(--transition-fast);
+}
+
+.tag-pill:hover {
+  background: rgba(19, 200, 236, 0.2);
+  border-color: var(--accent-cyan);
+  transform: scale(1.05);
+}

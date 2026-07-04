@@ -1,0 +1,82 @@
+---
+const currentYear = new Date().getFullYear();
+---
+<footer class="footer">
+  <div class="container footer-content">
+    <div class="footer-links">
+      <a href="https://github.com" target="_blank" rel="noopener noreferrer">GitHub</a>
+      <span class="divider">•</span>
+      <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      <span class="divider">•</span>
+      <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">Twitter / X</a>
+    </div>
+    
+    <p class="copyright">
+      Designed & Built by <span class="highlight">Ryan Guthrie</span> &middot; &copy; {currentYear}
+    </p>
+    <p class="tech-stack">
+      Powered by <span class="accent">Astro SSG</span>, <span class="accent">Google Stitch</span> &amp; <span class="accent">Cloudflare Pages</span>
+    </p>
+  </div>
+</footer>
+
+<style>
+  .footer {
+    border-top: 1px solid var(--glass-border);
+    padding: 4rem 0 3rem;
+    margin-top: 6rem;
+    background: rgba(15, 17, 21, 0.4);
+    text-align: center;
+  }
+
+  .footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .footer-links {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    margin-bottom: 0.5rem;
+  }
+
+  .footer-links a {
+    font-family: var(--font-display);
+    font-weight: 500;
+    color: var(--text-main);
+  }
+
+  .footer-links a:hover {
+    color: var(--accent-cyan);
+  }
+
+  .divider {
+    color: var(--text-muted);
+    opacity: 0.5;
+  }
+
+  .copyright {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    margin: 0;
+  }
+
+  .highlight {
+    color: #ffffff;
+    font-weight: 500;
+  }
+
+  .tech-stack {
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    opacity: 0.8;
+    margin: 0;
+  }
+
+  .accent {
+    color: var(--accent-cyan);
+  }
+</style>
