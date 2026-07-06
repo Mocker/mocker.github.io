@@ -2,7 +2,7 @@ name: Deploy Portfolio to Cloudflare Pages
 
 on:
   push:
-    branches: [ main ]
+    branches: [main]
 
 jobs:
   deploy:
@@ -14,8 +14,8 @@ jobs:
       - name: Install Node.js
         uses: actions/setup-node@v4
         with:
-          node-level: '20'
-          cache: 'npm'
+          node-version: "24"
+          cache: "npm"
 
       - name: Install dependencies
         run: npm ci
@@ -28,6 +28,6 @@ jobs:
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          # Astro outputs to 'dist' by default. 
+          # Astro outputs to 'dist' by default.
           # Change 'your-portfolio-name' to match your Cloudflare Pages project.
-          command: pages deploy dist --project-name=your-portfolio-name --branch=main
+          command: pages deploy dist --project-name=ryanguthrie --branch=main
