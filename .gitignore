@@ -1,5 +1,8 @@
 # build output
 dist/
+dist.7z
+dist.zip
+
 # generated types
 .astro/
 
