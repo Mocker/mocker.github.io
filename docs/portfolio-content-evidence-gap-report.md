@@ -34,6 +34,7 @@ This foundation is suitable for the next phase. It should be treated as a workin
 
 | Source | Current role | Status / risk |
 | --- | --- | --- |
+| `docs/LinkedIn-Profile.pdf` and the current LinkedIn profile | Authoritative employment-history snapshot | Primary source for conflicts with older employment material; contains personal contact information and should not be committed without an explicit publication decision |
 | `src/content/resume/experience.json` | Structured resume and skills data used by the site | Public-facing source; official employer titles must remain exact |
 | `src/content/projects/*.md` | Six current project entries | Mostly descriptive; evidence depth varies significantly |
 | `docs/Ryan_Guthrie_Profile_&_Resume.md` | Broad career-history reference | Duplicates resume data and can drift from the structured source |
@@ -41,7 +42,14 @@ This foundation is suitable for the next phase. It should be treated as a workin
 | `docs/Astro_5_Refactor_&_Voice_Overhaul_Report.md` | Historical record of the richer branch | Useful provenance, but not a current product specification |
 | Resume PDF | Recruiter-facing downloadable artifact | Must be checked against the structured resume before publication |
 
-Before final copy is approved, one source must be designated as canonical for employment dates, titles, and factual claims. The structured JSON is the best technical candidate, but it still needs a fact-check against the resume Ryan intends to submit.
+Source precedence is now established:
+
+1. Ryan's direct corrections and project-specific notes.
+2. The current LinkedIn profile and the July 18, 2026 LinkedIn PDF export for employment titles, companies, dates, and conflicts with older career material.
+3. `src/content/resume/experience.json` as the site's structured working copy.
+4. Older planning and profile documents as historical context only.
+
+The structured JSON must be reconciled to the LinkedIn source before the public resume is rewritten. Project-specific notes may add context, but may not alter official company names, job titles, or employment dates.
 
 ## Current project inventory
 
@@ -63,10 +71,10 @@ Before final copy is approved, one source must be designated as canonical for em
 - What can be disclosed publicly without exposing proprietary implementation details.
 - Sanitized architecture diagram or representative artifact.
 
-**Claims requiring explicit confirmation**
+**Claims requiring explicit confirmation or qualification**
 
 - "First" horizontal-scaling financial aggregation platform.
-- "Built solo" and the exact scope covered by that statement.
+- Avoid an unqualified "built solo" claim. Current intake clarifies that Ryan was the first engineer working on the aggregation backbone, brought it to an operational state before the team expanded, and continued working in a very small team that was usually just Ryan.
 - Comparisons such as "like Plaid before there was Plaid."
 
 ### Locale Planner
