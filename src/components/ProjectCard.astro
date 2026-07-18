@@ -3,12 +3,13 @@ interface Props {
   title: string;
   description: string;
   tags: string[];
+  slug?: string;
   liveUrl?: string;
   githubUrl?: string;
   featured?: boolean;
 }
 
-const { title, description, tags, liveUrl, githubUrl, featured = false } = Astro.props;
+const { title, description, tags, slug, liveUrl, githubUrl, featured = false } = Astro.props;
 ---
 
 <div class={`glass-card project-card ${featured ? 'featured' : ''}`} id={`project-${title.toLowerCase().replace(/\s+/g, '-')}`}>
@@ -32,11 +33,19 @@ const { title, description, tags, liveUrl, githubUrl, featured = false } = Astro
   </div>
 
   <h3 class="project-title">
-    {liveUrl ? <a href={liveUrl} target="_blank" rel="noopener noreferrer">{title}</a> : title}
+    {slug ? <a href={`/projects/${slug}`}>{title}</a> : (liveUrl ? <a href={liveUrl} target="_blank" rel="noopener noreferrer">{title}</a> : title)}
   </h3>
   
   <p class="project-desc">{description}</p>
   
+  {slug && (
+    <div class="card-action">
+      <a href={`/projects/${slug}`} class="read-more-link">
+        Read Architecture Case Study <span class="arrow">→</span>
+      </a>
+    </div>
+  )}
+
   <div class="project-tags">
     {tags.map((tag) => (
       <span class="tag-pill">{tag}</span>
@@ -108,6 +117,34 @@ const { title, description, tags, liveUrl, githubUrl, featured = false } = Astro
     line-height: 1.6;
     margin-bottom: 1.5rem;
     flex-grow: 1;
+  }
+
+  .card-action {
+    margin-bottom: 1.5rem;
+  }
+
+  .read-more-link {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: var(--accent-cyan);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    transition: all var(--transition-fast);
+  }
+
+  .read-more-link:hover {
+    color: var(--accent-teal);
+    transform: translateX(4px);
+  }
+
+  .arrow {
+    transition: transform var(--transition-fast);
+  }
+
+  .read-more-link:hover .arrow {
+    transform: translateX(4px);
   }
 
   .project-tags {

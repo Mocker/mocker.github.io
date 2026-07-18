@@ -1,0 +1,149 @@
+{
+  "summary": "Staff Software Architect & Engineering Lead with 20+ years of experience designing scalable, reliable systems and guiding cross-functional teams from initial planning to production release. A proven technical leader who combines high-level solution architecture, horizontal backend scaling, cloud/edge infrastructure, Linux server security, and modern AI agentic workflows—turning complex organizational requirements into clean, low-maintenance software that just works.",
+  "yearsOfExperience": 20,
+  "philosophy": [
+    {
+      "title": "First-Principles Architecture",
+      "description": "Evaluating technical solutions and system designs through logic-driven, scientific evaluation rather than industry hype or dogma."
+    },
+    {
+      "title": "Cross-Functional Engineering Leadership",
+      "description": "Guiding teams from ambiguity to execution without ego—aligning product strategy, analytics, and engineering around reliable delivery."
+    },
+    {
+      "title": "Low-Energy Maintenance",
+      "description": "Designing architectures with minimal moving parts, favoring zero-bloat static site generation and clean system boundaries over unnecessary complexity."
+    },
+    {
+      "title": "Data Independence & Decentralization",
+      "description": "Decoupling data from proprietary vendor ecosystems, advocating for open protocols like Nostr and independent tools like Rclone."
+    }
+  ],
+  "skills": {
+    "featured": [
+      "Solution & System Architecture",
+      "Cross-Functional Engineering Leadership",
+      "Cloud & Edge Infrastructure (AWS/Cloudflare)",
+      "TypeScript / JavaScript (ES6+)",
+      "Golang Backend Systems",
+      "AI Agentic Workflows & Tooling",
+      "Linux Server Security & Hardening",
+      "PostgreSQL / Supabase / MongoDB",
+      "Horizontal Backend Scaling",
+      "Astro & Zero-Bloat Web Architecture"
+    ],
+    "core": [
+      "Software Solution Architecture",
+      "Technical Leadership & Mentorship",
+      "Cloud Computing & Infrastructure",
+      "System Security & Audit",
+      "Linux Server Administration",
+      "High-Throughput API Design",
+      "AI/ML Pipelines & Data Mining",
+      "Multiplayer & Real-time Servers"
+    ],
+    "languages": [
+      "TypeScript",
+      "JavaScript (ES6+)",
+      "Golang",
+      "Python",
+      "SQL",
+      "Rust (Recent Pivot / Exploring)",
+      "Bash & PowerShell",
+      "PHP & Perl (Legacy Systems)",
+      "C# / Unity"
+    ],
+    "webAndEdge": [
+      "Astro SSG & SSR",
+      "Next.js & React",
+      "Node.js & Express",
+      "HTML5 Canvas & WebGL",
+      "Vanilla CSS Design Tokens",
+      "Tailwind CSS"
+    ],
+    "cloudAndDevOps": [
+      "AWS (Lambdas, Gateways, Scaling APIs)",
+      "Cloudflare (Workers, Pages, Wrangler)",
+      "Docker & Containerization",
+      "PostgreSQL, MongoDB, Supabase, GraphQL",
+      "Git Flow Version Control",
+      "Linux Server Hardening & Kernel Audit",
+      "Jenkins CI/CD Pipeline Automation"
+    ]
+  },
+  "languages": [
+    {
+      "name": "English",
+      "proficiency": "Native / Bilingual"
+    },
+    {
+      "name": "Spanish",
+      "proficiency": "Professional Working"
+    }
+  ],
+  "experience": [
+    {
+      "company": "Earnest",
+      "role": "Senior Software Engineer",
+      "period": "June 2021 – January 2024 (2 years 8 months)",
+      "location": "United States (Remote)",
+      "highlights": [
+        "Collaborated with the Growth team and diverse stakeholders, leading multiple engineering initiatives to optimize customer experience and top-of-the-funnel conversion across organizational boundaries.",
+        "Architected projects from initial first-principles planning through reliable production release across cloud stacks, including AWS Lambdas, AWS Gateways, user referral tracking systems, and Next.js static/incremental generation (SSG/ISR).",
+        "Partnered directly with product, marketing, lifecycle, and analytics leaders to define requirements and drive engineering execution while mentoring developers and improving CI/CD workflows."
+      ]
+    },
+    {
+      "company": "Wizeline",
+      "role": "Senior Software Engineer",
+      "period": "December 2019 – June 2021 (1 year 7 months)",
+      "location": "Guadalajara Area, Mexico & Remote",
+      "highlights": [
+        "Served as core platform backend contractor for a major U.S. financial services institution, guiding backend system design and scalability.",
+        "Engineered high-throughput, secure backend microservices using Node.js, AWS, Docker, Jenkins, PostgreSQL, and GraphQL."
+      ]
+    },
+    {
+      "company": "ryanguthrie.com",
+      "role": "Consultant / Programmer",
+      "period": "March 2008 – April 2021 (13 years 2 months)",
+      "location": "Eugene, OR & Remote",
+      "highlights": [
+        "Provided freelance software architecture, custom system development, and Linux security consulting across a 13-year span.",
+        "Executed Linux server provisioning, kernel hardening, automation scripting, and comprehensive vulnerability auditing.",
+        "Architected AWS scaling-on-demand backend APIs, executed complex database migrations (PostgreSQL, MySQL, MongoDB), and engineered custom web/mobile applications and interactive HTML5 Canvas/Unity tools."
+      ]
+    },
+    {
+      "company": "Paybook",
+      "role": "Senior Software Architect",
+      "period": "January 2013 – December 2019 (7 years)",
+      "location": "Mexico / LatAm / US",
+      "highlights": [
+        "\"Like Plaid before there was Plaid\": Designed and built solo the first horizontal-scaling backend platform to aggregate financial data across banks and financial services in Mexico, LatAm, US, and Crypto ecosystems.",
+        "Architected complete system fault redundancy, CI/CD tooling, Linux server configuration, and developer onboarding frameworks.",
+        "Built integrations for Mexican tax services (SAT), automated utility bill processing engines, and high-performance financial data pipelines."
+      ]
+    },
+    {
+      "company": "New World Brands, INC",
+      "role": "Programmer",
+      "period": "April 2008 – March 2009 (1 year)",
+      "location": "Eugene, OR",
+      "highlights": [
+        "Developed internal enterprise applications utilizing Perl and AJAX user interfaces to automate and monitor international VoIP networks.",
+        "Saved significant operational costs by creating an automated smart-recharging and dynamic routing engine for international voice traffic."
+      ]
+    },
+    {
+      "company": "TouchSupport",
+      "role": "Linux System Admin",
+      "period": "October 2005 – March 2008 (2 years 6 months)",
+      "location": "United States",
+      "highlights": [
+        "Provided top-level Linux system administration, kernel hardening, and security auditing across web hosting server clusters.",
+        "Responded to critical security vulnerabilities and diagnosed complex system performance bottlenecks."
+      ]
+    }
+  ]
+}

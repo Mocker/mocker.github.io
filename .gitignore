@@ -26,5 +26,5 @@ pnpm-debug.log*
 # jetbrains setting folder
 .idea/
 
-#ai directives
+# agent directives
 .agents/

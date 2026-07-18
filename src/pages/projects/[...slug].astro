@@ -1,0 +1,609 @@
+---
+import { getCollection, render } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+export async function getStaticPaths() {
+  const projectsEntries = await getCollection('projects');
+  return projectsEntries.map(entry => ({
+    params: { slug: entry.id },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await render(entry);
+const { data } = entry;
+---
+
+<BaseLayout title={`${data.title} | Ryan Guthrie Architecture`}>
+  <article class="project-detail container">
+    <!-- Hero & Metadata Header -->
+    <header class="detail-header glass-card">
+      <div class="header-top">
+        <a href="/#projects" class="back-link">← Back to Projects</a>
+        
+        <div class="header-badges">
+          {data.category && <span class="badge-category">⚡ {data.category}</span>}
+          {data.timeframe && <span class="badge-timeframe">🕒 {data.timeframe}</span>}
+          {!data.timeframe && <span class="badge-timeframe">📅 {data.publishDate.toLocaleDateString('en-US', { year: 'numeric', month: 'short' })}</span>}
+        </div>
+      </div>
+      
+      <h1 class="detail-title">{data.title}</h1>
+      <p class="detail-subtitle">{data.description || data.summary}</p>
+      
+      <!-- Historical / Role & Client Context Bar -->
+      {(data.role || data.clientOrCompany || data.brainSource) && (
+        <div class="context-bar">
+          {data.role && (
+            <div class="context-item">
+              <span class="context-label">Role</span>
+              <span class="context-value">👤 {data.role}</span>
+            </div>
+          )}
+          {data.clientOrCompany && (
+            <div class="context-item">
+              <span class="context-label">Client / Organization</span>
+              <span class="context-value">🏢 {data.clientOrCompany}</span>
+            </div>
+          )}
+          {data.brainSource && (
+            <div class="context-item brain-sync">
+              <span class="context-label">Brain Sync Status</span>
+              <span class="context-value">🧠 Active Workspace Export</span>
+              {data.brainSource.lastSynced && <span class="sync-date">Synced: {data.brainSource.lastSynced}</span>}
+            </div>
+          )}
+        </div>
+      )}
+      
+      <!-- Tech Stack Tags -->
+      <div class="detail-tags">
+        {data.tags.map(tag => (
+          <span class="tag-pill">{tag}</span>
+        ))}
+      </div>
+      
+      <!-- External Links -->
+      <div class="detail-links">
+        {data.liveUrl && (
+          <a href={data.liveUrl} target="_blank" rel="noopener noreferrer" class="btn-primary">
+            View Live Demo ↗
+          </a>
+        )}
+        {data.githubUrl && (
+          <a href={data.githubUrl} target="_blank" rel="noopener noreferrer" class="btn-secondary">
+            GitHub Repository ↗
+          </a>
+        )}
+        {data.demoUrl && data.demoType !== 'canvas' && (
+          <a href={data.demoUrl} target="_blank" rel="noopener noreferrer" class="btn-secondary">
+            Launch Interactive Demo ↗
+          </a>
+        )}
+      </div>
+    </header>
+
+    <!-- Interactive Canvas Stage (Conditional Template Feature) -->
+    {data.demoType === 'canvas' && (
+      <section class="demo-stage glass-card" aria-label="Interactive Canvas Widget Stage">
+        <div class="stage-header">
+          <div class="stage-title-group">
+            <span class="pulse-dot"></span>
+            <h3 class="stage-title">Interactive Canvas Stage</h3>
+          </div>
+          <span class="stage-hint">HTML5 Canvas / WebGL Mount Point</span>
+        </div>
+        
+        <div class="canvas-container" id={`canvas-stage-${entry.id}`}>
+          <div class="canvas-placeholder">
+            <div class="placeholder-icon">🎮</div>
+            <h4>Interactive Widget Container Ready</h4>
+            <p>
+              This project is configured for interactive canvas rendering. When you are ready to drop in your custom HTML5 Canvas, 
+              Phaser, or Three.js/WebGL demo, it will mount seamlessly inside this responsive container.
+            </p>
+            {data.demoUrl && (
+              <a href={data.demoUrl} target="_blank" rel="noopener noreferrer" class="btn-secondary stage-btn">
+                Open External Demo Data ↗
+              </a>
+            )}
+          </div>
+        </div>
+      </section>
+    )}
+
+    <!-- iframe / Video Embed Stage (Conditional) -->
+    {(data.demoType === 'iframe' || data.demoType === 'video') && data.demoUrl && (
+      <section class="demo-stage glass-card" aria-label="Project Embed Preview">
+        <div class="stage-header">
+          <span class="stage-title">📺 {data.demoType === 'video' ? 'Video Walkthrough' : 'Interactive Embed'}</span>
+        </div>
+        <div class="embed-container">
+          <iframe src={data.demoUrl} title={`${data.title} Demo`} allowfullscreen loading="lazy"></iframe>
+        </div>
+      </section>
+    )}
+
+    <!-- Architecture & Case Study Prose -->
+    <section class="detail-content glass-card" aria-label="Architectural Case Study">
+      <div class="content-header">
+        <h2 class="prose-title">Architectural Case Study &amp; System Design</h2>
+        <div class="heading-line"></div>
+      </div>
+      
+      <div class="prose">
+        <Content />
+      </div>
+    </section>
+
+    <!-- Footer CTA -->
+    <footer class="detail-footer glass-card">
+      <div class="footer-content">
+        <h3>Want to discuss this architecture or build something similar?</h3>
+        <p>I'm available for architectural consulting, system design reviews, and engineering leadership.</p>
+        <div class="footer-actions">
+          <a href="mailto:ryan@ryanguthrie.com?subject=Inquiry regarding: ${data.title}" class="btn-primary">Contact Ryan About This Project</a>
+          <a href="/#projects" class="btn-secondary">Explore More Projects</a>
+        </div>
+      </div>
+    </footer>
+  </article>
+</BaseLayout>
+
+<script>
+  import mermaid from 'mermaid';
+
+  document.addEventListener('DOMContentLoaded', async () => {
+    // Detect code blocks containing mermaid diagrams
+    const mermaidBlocks = document.querySelectorAll('pre[data-language="mermaid"], pre:has(code.language-mermaid), pre code.language-mermaid, .language-mermaid');
+
+    if (mermaidBlocks.length > 0) {
+      mermaid.initialize({
+        startOnLoad: false,
+        theme: 'dark',
+        themeVariables: {
+          darkMode: true,
+          background: 'transparent',
+          primaryColor: '#13c8ec',
+          primaryTextColor: '#ffffff',
+          primaryBorderColor: '#13c8ec',
+          lineColor: '#8a2be2',
+          secondaryColor: '#1f252f',
+          tertiaryColor: '#171b22',
+          fontFamily: 'Inter, system-ui, sans-serif'
+        }
+      });
+
+      for (let i = 0; i < mermaidBlocks.length; i++) {
+        const block = mermaidBlocks[i];
+        const code = block.textContent || '';
+        
+        if (block.getAttribute('data-mermaid-processed')) continue;
+        block.setAttribute('data-mermaid-processed', 'true');
+
+        const container = document.createElement('div');
+        container.className = 'mermaid-diagram-container glass-card';
+        container.style.padding = '2.5rem';
+        container.style.margin = '2.5rem 0';
+        container.style.overflowX = 'auto';
+        container.style.textAlign = 'center';
+
+        try {
+          const { svg } = await mermaid.render(`mermaid-svg-${i}`, code);
+          container.innerHTML = svg;
+          
+          const targetToReplace = block.tagName === 'CODE' && block.parentElement?.tagName === 'PRE' 
+            ? block.parentElement 
+            : block;
+            
+          targetToReplace.replaceWith(container);
+        } catch (err) {
+          console.error('Mermaid render error:', err);
+        }
+      }
+    }
+  });
+</script>
+
+<style>
+  .project-detail {
+    padding-top: 3rem;
+    padding-bottom: 6rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+  }
+
+  /* Header Styles */
+  .detail-header {
+    padding: 3rem;
+  }
+
+  .header-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .back-link {
+    font-family: var(--font-display);
+    font-weight: 600;
+    color: var(--accent-cyan);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .back-link:hover {
+    color: var(--accent-teal);
+    transform: translateX(-4px);
+  }
+
+  .header-badges {
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+  }
+
+  .badge-category,
+  .badge-timeframe {
+    font-family: var(--font-display);
+    font-size: 0.85rem;
+    font-weight: 600;
+    padding: 0.35rem 0.85rem;
+    border-radius: var(--radius-full);
+  }
+
+  .badge-category {
+    background: rgba(19, 200, 236, 0.15);
+    color: var(--accent-cyan);
+    border: 1px solid rgba(19, 200, 236, 0.3);
+  }
+
+  .badge-timeframe {
+    background: rgba(138, 43, 226, 0.15);
+    color: #e0aaff;
+    border: 1px solid rgba(138, 43, 226, 0.3);
+  }
+
+  .detail-title {
+    font-size: clamp(2.5rem, 5vw, 3.75rem);
+    line-height: 1.15;
+    margin-bottom: 1rem;
+    color: #ffffff;
+  }
+
+  .detail-subtitle {
+    font-size: clamp(1.15rem, 2vw, 1.35rem);
+    line-height: 1.6;
+    color: var(--text-main);
+    max-width: 850px;
+    margin-bottom: 2.5rem;
+  }
+
+  /* Context Bar */
+  .context-bar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    background: rgba(0, 0, 0, 0.25);
+    padding: 1.25rem 1.75rem;
+    border-radius: var(--radius-sm);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    margin-bottom: 2.5rem;
+  }
+
+  .context-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  .context-label {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--text-muted);
+    font-weight: 600;
+  }
+
+  .context-value {
+    font-family: var(--font-display);
+    font-size: 1.05rem;
+    color: #ffffff;
+    font-weight: 600;
+  }
+
+  .brain-sync .context-value {
+    color: var(--accent-cyan);
+  }
+
+  .sync-date {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+  }
+
+  .detail-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .detail-links {
+    display: flex;
+    gap: 1.25rem;
+    flex-wrap: wrap;
+  }
+
+  /* Interactive Canvas Stage */
+  .demo-stage {
+    padding: 2rem;
+    border-color: rgba(19, 200, 236, 0.3);
+    background: linear-gradient(180deg, rgba(23, 27, 34, 0.9) 0%, rgba(15, 17, 21, 0.95) 100%);
+  }
+
+  .stage-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--glass-border);
+  }
+
+  .stage-title-group {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .pulse-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--accent-cyan);
+    box-shadow: 0 0 12px var(--accent-cyan);
+    animation: pulse 2s infinite;
+  }
+
+  @keyframes pulse {
+    0% { transform: scale(0.95); opacity: 0.8; }
+    50% { transform: scale(1.3); opacity: 1; box-shadow: 0 0 20px var(--accent-cyan); }
+    100% { transform: scale(0.95); opacity: 0.8; }
+  }
+
+  .stage-title {
+    font-size: 1.25rem;
+    color: #ffffff;
+    margin: 0;
+  }
+
+  .stage-hint {
+    font-family: var(--font-display);
+    font-size: 0.85rem;
+    color: var(--accent-cyan);
+    background: rgba(19, 200, 236, 0.1);
+    padding: 0.25rem 0.75rem;
+    border-radius: var(--radius-full);
+  }
+
+  .canvas-container {
+    width: 100%;
+    min-height: 380px;
+    background: rgba(0, 0, 0, 0.4);
+    border: 2px dashed rgba(19, 200, 236, 0.3);
+    border-radius: var(--radius-sm);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 3rem 2rem;
+    text-align: center;
+  }
+
+  .canvas-placeholder {
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .placeholder-icon {
+    font-size: 3rem;
+  }
+
+  .canvas-placeholder h4 {
+    font-size: 1.4rem;
+    color: #ffffff;
+    margin: 0;
+  }
+
+  .canvas-placeholder p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  .stage-btn {
+    margin-top: 1rem;
+  }
+
+  .embed-container {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+    height: 0;
+    overflow: hidden;
+    border-radius: var(--radius-sm);
+  }
+
+  .embed-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+  }
+
+  /* Content & Prose Styles */
+  .detail-content {
+    padding: 3.5rem;
+  }
+
+  .content-header {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .prose-title {
+    font-size: 1.75rem;
+    color: #ffffff;
+    margin: 0;
+    white-space: nowrap;
+  }
+
+  .heading-line {
+    width: 100%;
+    height: 1px;
+    background: var(--glass-border);
+  }
+
+  .prose {
+    font-size: 1.125rem;
+    line-height: 1.8;
+  }
+
+  .prose :global(h1),
+  .prose :global(h2),
+  .prose :global(h3),
+  .prose :global(h4) {
+    color: #ffffff;
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+    font-family: var(--font-display);
+  }
+
+  .prose :global(h2) {
+    font-size: 1.8rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    padding-bottom: 0.5rem;
+  }
+
+  .prose :global(h3) {
+    font-size: 1.4rem;
+    color: var(--accent-cyan);
+  }
+
+  .prose :global(p) {
+    margin-bottom: 1.5rem;
+    color: var(--text-main);
+  }
+
+  .prose :global(ul),
+  .prose :global(ol) {
+    margin-bottom: 1.75rem;
+    padding-left: 1.75rem;
+    color: var(--text-main);
+  }
+
+  .prose :global(li) {
+    margin-bottom: 0.6rem;
+    padding-left: 0.25rem;
+  }
+
+  .prose :global(li::marker) {
+    color: var(--accent-cyan);
+  }
+
+  .prose :global(blockquote) {
+    border-left: 4px solid var(--accent-cyan);
+    background: rgba(19, 200, 236, 0.05);
+    padding: 1.25rem 1.5rem;
+    margin: 2rem 0;
+    border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+    font-style: italic;
+  }
+
+  .prose :global(code) {
+    font-family: monospace;
+    background: rgba(0, 0, 0, 0.35);
+    padding: 0.2rem 0.4rem;
+    border-radius: 4px;
+    color: var(--accent-teal);
+    font-size: 0.9em;
+  }
+
+  .prose :global(pre) {
+    background: rgba(0, 0, 0, 0.5) !important;
+    border: 1px solid var(--glass-border);
+    padding: 1.5rem;
+    border-radius: var(--radius-sm);
+    overflow-x: auto;
+    margin: 2rem 0;
+  }
+
+  .prose :global(pre code) {
+    background: transparent;
+    padding: 0;
+    color: inherit;
+  }
+
+  /* Footer CTA */
+  .detail-footer {
+    padding: 3rem;
+    text-align: center;
+    background: linear-gradient(135deg, rgba(23, 27, 34, 0.8) 0%, rgba(31, 37, 47, 0.6) 100%);
+  }
+
+  .footer-content {
+    max-width: 650px;
+    margin: 0 auto;
+  }
+
+  .footer-content h3 {
+    font-size: 1.75rem;
+    color: #ffffff;
+    margin-bottom: 0.75rem;
+  }
+
+  .footer-content p {
+    color: var(--text-muted);
+    margin-bottom: 2rem;
+  }
+
+  .footer-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  /* Responsive Adjustments */
+  @media (max-width: 768px) {
+    .detail-header,
+    .demo-stage,
+    .detail-content,
+    .detail-footer {
+      padding: 1.75rem;
+    }
+
+    .context-bar {
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+
+    .header-top {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+</style>
