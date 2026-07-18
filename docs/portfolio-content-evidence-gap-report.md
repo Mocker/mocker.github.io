@@ -98,14 +98,16 @@ The current entry emphasizes aesthetics and tools more than engineering decision
 
 ### Lustre
 
+**Selection status:** Deferred research. Lustre is not completed functionality and has not been proven. Do not use it as a first-iteration case study or describe it as an implemented system.
+
 **Current strengths**
 
 - Potential evidence for protocol design, cryptographic identity, decentralization, TypeScript, and emerging Rust work.
 - Contains the only current architecture diagram.
 
-**Evidence still needed**
+**Evidence still needed before any future case-study treatment**
 
-- Clarify whether Lustre is an implementation, prototype, research project, or planned system.
+- Define a bounded research question and distinguish investigation from implementation.
 - Repository or demonstrable artifact.
 - Implemented Nostr event types, relay behavior, key handling, and security model.
 - Specific Rust components that exist today.

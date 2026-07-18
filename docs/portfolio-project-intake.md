@@ -155,7 +155,6 @@ These names come from the restored site and prior career material. Their presenc
 - Ryan's consulting projects.
 - New World Brands VoIP automation and monitoring.
 - TouchSupport Linux security and operations work.
-- Lustre.
 - Ryan-OS Pipeline Tools.
 
 Additional personal, consulting, open-source, game, mobile, backend, infrastructure, automation, and experimental projects should be added as they are recovered.
@@ -167,10 +166,19 @@ The following projects remain in the private inventory but are not candidates fo
 | Project | Decision | Reason | Future reconsideration |
 | --- | --- | --- | --- |
 | Locale Planner | Deferred | Not enough implemented or showable material for a credible case study | Reconsider when a demonstrable product, artifacts, and engineering outcomes exist |
+| Lustre | Deferred research | Research project only; functionality is incomplete, unproven, and must not be represented as an implemented protocol or working system | Reconsider only after implementation and validation; optionally mention later as a clearly labeled research interest |
 | SereneNews Aggregator | Deferred | Not enough implemented or showable material for a credible case study | Reconsider when the deployed system, ingestion architecture, and performance evidence can be demonstrated |
 | Worm Compost Match-3 Prototype | Deferred | Not enough implemented or showable material for a credible case study | Reconsider when a working demo, source, video, or substantive implementation can be shown |
 
 Their restored source entries should remain untouched while intake is in progress. Once the first-iteration project list is approved, remove them from the public content collection/build in one deliberate implementation pass. Do not delete historical notes or recovered artifacts.
+
+### Lustre accuracy boundary
+
+- Classification: research project.
+- Current state: incomplete functionality.
+- Validation state: unproven.
+- Not appropriate for a first-iteration case study or for claims of implemented decentralized identity, cryptographic verification, relay behavior, security, interoperability, or performance.
+- Any future mention must use research-oriented language such as "exploring" or "investigating," never production or implementation language unless the project later earns that description.
 
 ## Intake template for additional projects
 
