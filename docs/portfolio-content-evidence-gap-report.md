@@ -117,18 +117,22 @@ The current copy risks presenting architectural intent as completed functionalit
 
 ### Ryan-OS Pipeline Tools
 
+**Selection status:** Retain as a brief first-iteration portfolio mention. Ryan-OS is an active personal and reusable platform that drives Ryan's independent products; it should not be characterized as merely a script collection.
+
 **Current strengths**
 
 - Demonstrates developer tooling, automation, Windows/Linux fluency, CI/CD, and current hands-on work.
 - Could support a strong internal-platform or developer-productivity story.
 
-**Evidence still needed**
+**Evidence deferred until a deeper case-study pass**
 
 - Clear boundary: product, personal environment, script collection, or reusable platform.
 - Concrete commands/workflows implemented today.
 - Before/after workflow evidence such as reduced setup time, fewer manual steps, or improved reproducibility.
 - Architecture, repository visibility, portability, test strategy, and security model.
 - Remove or generalize private filesystem/workspace details before publication.
+
+For the initial site, depth is intentionally unnecessary. A concise mention should focus on reusable platform leverage, rapid iteration, testing, reliability, and delivery across independent products. Additional architectural evidence can be collected later from Ryan's related repositories.
 
 ### SereneNews Aggregator
 

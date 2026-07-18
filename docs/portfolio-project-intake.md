@@ -146,6 +146,48 @@ These are evaluation notes, not approved marketing language.
 
 Use Paybook as a high-value employment mention demonstrating end-to-end architecture and long-term ownership. Do not require a full public case study for the initial site. Retain the deeper notes for a possible future, carefully sanitized case study.
 
+### Ryan-OS reusable product and delivery platform
+
+- **Intake state:** Active and operational
+- **Ownership:** Personal platform
+- **Project type:** Reusable platform supporting independent products
+- **Default publication treatment:** Brief portfolio mention for the first iteration
+- **Deeper-source status:** Additional information exists in Ryan's other project repositories; defer that review until a dedicated case-study pass is useful
+
+#### Ryan's clarified purpose
+
+- Ryan-OS is both a personal platform and a reusable platform.
+- It drives Ryan's independent products rather than existing only as a loose collection of scripts.
+- It supports rapid iteration from an idea through delivery.
+- Its delivery pipeline is designed to preserve reliability and testing while increasing iteration speed.
+- It provides common infrastructure and workflow leverage across multiple independent products.
+
+#### Potential senior-level signals
+
+- Platform thinking applied across a portfolio of products.
+- Reusable delivery infrastructure rather than one-off project setup.
+- Developer-experience and iteration-speed improvements balanced with testing and reliability.
+- A repeatable path from exploration to delivered software.
+- Current hands-on ownership spanning product development, automation, quality controls, and delivery.
+
+These are intake-level signals, not approved public claims or a complete case study.
+
+#### First-iteration recommendation
+
+Use a concise mention that identifies Ryan-OS as the reusable platform behind Ryan's independent products and emphasizes rapid, reliable, tested delivery. Do not attempt to explain its full architecture yet. Avoid reducing it to "pipeline tools" if that wording obscures its platform role.
+
+#### Deferred evidence review
+
+When deeper treatment becomes useful, review the related project repositories for:
+
+- Platform boundaries and shared components.
+- The product lifecycle and delivery pipeline.
+- Test gates, validation, rollback, and reliability mechanisms.
+- Examples of multiple products using the platform.
+- Evidence of reduced setup or delivery time.
+- Reusable interfaces, configuration, and extension points.
+- Safe diagrams, screenshots, commands, or demonstrations.
+
 ## Known candidates awaiting expanded intake
 
 These names come from the restored site and prior career material. Their presence here does not imply selection:
@@ -155,7 +197,6 @@ These names come from the restored site and prior career material. Their presenc
 - Ryan's consulting projects.
 - New World Brands VoIP automation and monitoring.
 - TouchSupport Linux security and operations work.
-- Ryan-OS Pipeline Tools.
 
 Additional personal, consulting, open-source, game, mobile, backend, infrastructure, automation, and experimental projects should be added as they are recovered.
 
