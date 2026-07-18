@@ -98,7 +98,7 @@ The current entry emphasizes aesthetics and tools more than engineering decision
 
 ### Lustre
 
-**Selection status:** Deferred research. Lustre is not completed functionality and has not been proven. Do not use it as a first-iteration case study or describe it as an implemented system.
+**Selection status:** Retain as a brief, clearly labeled first-iteration research/design mention. Lustre is not completed functionality and has not been proven; do not use it as a case study or describe it as an implemented system.
 
 **Current strengths**
 
@@ -114,6 +114,27 @@ The current entry emphasizes aesthetics and tools more than engineering decision
 - Testing, interoperability, or performance evidence.
 
 The current copy risks presenting architectural intent as completed functionality.
+
+### Liaison
+
+**Selection status:** Strong featured-case-study candidate pending completion of project intake and later repository verification.
+
+**Current strengths**
+
+- Bounded product problem connecting client intent, product discovery, and engineering decisions.
+- Clear human-in-the-loop publication and approval model.
+- Separation of private engineering reasoning from shared client communication.
+- Deterministic, versioned, zero-secret browser demo that can be evaluated reliably.
+- Production design spanning Astro/React, Supabase Auth/Postgres/Realtime/RLS, Cloudflare Workers, typed model contracts, transactional writes, and provider-neutral OpenAI/Gemini adapters.
+- Strong evidence of product strategy, full-stack architecture, interaction design, authorization thinking, and AI safety boundaries.
+
+**Verification deferred until selection**
+
+- Confirm which production-path components are implemented versus designed.
+- Verify the demo, screenshots, public URL, representative tests, RLS policies, provider contract, and conflict-handling behavior.
+- Confirm the four-day alpha timeline and hackathon context if retained in public copy.
+
+The curated source is `docs/portfolio-entry-liaison.md`. It is sufficient for candidate evaluation without accessing Liaison's repository during this intake phase.
 
 ### Ryan-OS Pipeline Tools
 

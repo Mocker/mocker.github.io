@@ -188,6 +188,55 @@ When deeper treatment becomes useful, review the related project repositories fo
 - Reusable interfaces, configuration, and extension points.
 - Safe diagrams, screenshots, commands, or demonstrations.
 
+### Liaison
+
+- **Intake state:** Active hackathon alpha with a working deterministic demo and a defined production path
+- **Ownership:** Personal project built in Codex
+- **Project type:** Human-in-the-loop product discovery and client-engineering collaboration workspace
+- **Primary intake source:** `docs/portfolio-entry-liaison.md`
+- **Default publication treatment:** Featured-case-study candidate; selection remains pending until the complete project inventory is reviewed
+- **Deeper-source status:** The curated portfolio entry is sufficient for intake. Repository-level verification can wait until Liaison is selected for implementation or a dedicated case-study branch.
+
+#### Demonstrated project shape
+
+- Interviews clients with focused follow-up questions and maintains a living product brief.
+- Separates private developer feasibility/trade-off notes from client-visible communication.
+- Requires developer review before publishing AI-prepared translations.
+- Requires client acceptance before proposed scope and milestone changes become authoritative.
+- Preserves accepted decisions in a durable trail.
+- Provides a polished browser-only demo using deterministic, versioned state with no account, API key, secret, or network dependency.
+- Defines a production path using Astro, React, TypeScript, Supabase, Cloudflare Workers, OpenAI, and Gemini.
+
+#### Potential senior-level signals
+
+- Product discovery and product/engineering alignment rather than feature-only implementation.
+- Explicit identification of decisions the system must not make autonomously.
+- Human publication and approval gates as architectural invariants.
+- Role-separated data access using Supabase Row Level Security.
+- Typed validation of model output.
+- Version checks and transactional document writes.
+- Provider-neutral AI integration behind a shared contract.
+- Deterministic demonstration design that makes evaluation reliable.
+- Full-stack ownership across product strategy, interaction design, application architecture, data, edge deployment, and AI safety boundaries.
+
+These signals come from the curated project entry and are not yet independently verified against the repository in this portfolio intake pass.
+
+#### First-iteration recommendation
+
+Keep Liaison in the candidate pool for one of the strongest first-iteration project treatments. It can support more than a brief technology mention because its interesting engineering work is the decision and trust model, not merely the use of AI APIs. Do not finalize its placement until the remaining project candidates have been collected.
+
+#### Verification deferred until selection
+
+If Liaison is selected, verify only the claims needed for public copy:
+
+- Working demo and available screenshots or walkthrough.
+- Which parts of the production path are implemented versus designed.
+- RLS policies, role boundaries, and representative authorization tests.
+- Typed provider contract and validation behavior.
+- Version-conflict and transactional update handling.
+- Current deployment status and public URL.
+- Hackathon context and project timeline.
+
 ## Known candidates awaiting expanded intake
 
 These names come from the restored site and prior career material. Their presence here does not imply selection:
@@ -207,19 +256,28 @@ The following projects remain in the private inventory but are not candidates fo
 | Project | Decision | Reason | Future reconsideration |
 | --- | --- | --- | --- |
 | Locale Planner | Deferred | Not enough implemented or showable material for a credible case study | Reconsider when a demonstrable product, artifacts, and engineering outcomes exist |
-| Lustre | Deferred research | Research project only; functionality is incomplete, unproven, and must not be represented as an implemented protocol or working system | Reconsider only after implementation and validation; optionally mention later as a clearly labeled research interest |
 | SereneNews Aggregator | Deferred | Not enough implemented or showable material for a credible case study | Reconsider when the deployed system, ingestion architecture, and performance evidence can be demonstrated |
 | Worm Compost Match-3 Prototype | Deferred | Not enough implemented or showable material for a credible case study | Reconsider when a working demo, source, video, or substantive implementation can be shown |
 
 Their restored source entries should remain untouched while intake is in progress. Once the first-iteration project list is approved, remove them from the public content collection/build in one deliberate implementation pass. Do not delete historical notes or recovered artifacts.
+
+## First-iteration brief research mentions
+
+### Lustre
+
+**Publication treatment:** Brief research mention, not a case study.
+
+Ryan wants Lustre represented because the idea and system design are relevant and interesting even though the project is not completed or proven. Its value is as evidence of architectural curiosity and design exploration, not delivered functionality.
 
 ### Lustre accuracy boundary
 
 - Classification: research project.
 - Current state: incomplete functionality.
 - Validation state: unproven.
-- Not appropriate for a first-iteration case study or for claims of implemented decentralized identity, cryptographic verification, relay behavior, security, interoperability, or performance.
-- Any future mention must use research-oriented language such as "exploring" or "investigating," never production or implementation language unless the project later earns that description.
+- Appropriate only as a concise, explicitly labeled research/design mention in the first iteration.
+- Not appropriate for a case study or for claims of implemented decentralized identity, cryptographic verification, relay behavior, security, interoperability, or performance.
+- The mention can describe the problem space, intended design, and questions being explored.
+- Any wording must use research-oriented language such as "exploring," "investigating," or "designing," never production or completed-implementation language unless the project later earns that description.
 
 ## Intake template for additional projects
 
