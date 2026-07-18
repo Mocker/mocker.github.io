@@ -1,7 +1,7 @@
 ---
-title: "Lustre (Decentralized Identity Protocol)"
-summary: "An exploration and implementation of decentralized identity and communication protocols leveraging the Nostr network."
-description: "Built to advance data independence and low-energy maintenance, Lustre explores cryptographic identity verification and decentralized messaging without vendor lock-in."
+title: "Lustre"
+summary: "A research and design project exploring portable identity, user-owned data, and communication across decentralized networks. The work focuses on protocol boundaries and trust models; it is not yet completed or proven in production."
+description: "Research into decentralized identity and communication design."
 tags:
   [
     "TypeScript",
@@ -11,14 +11,20 @@ tags:
     "Cryptography",
   ]
 featured: true
+visibility: mention
+kind: "Research project"
+status: "Exploratory"
+order: 4
+detailPage: false
 publishDate: 2026-04-01
-role: "Core Architect"
+role: "Researcher & Designer"
+timeframe: "Ongoing research"
 hasInteractiveWidget: false
 ---
 
 # 🔐 Lustre (Decentralized Identity & Protocol)
 
-**Lustre** is an architectural exploration and toolset built around the **Nostr protocol**, focusing on decentralized identity, cryptographic verification, and censorship-resistant communication.
+**Lustre** is an architectural research project exploring ideas around the **Nostr protocol**, decentralized identity, cryptographic verification, and censorship-resistant communication. It is not completed functionality and its design has not yet been proven in production.
 
 ## 🛡️ Why Decentralization? (First Principles)
 

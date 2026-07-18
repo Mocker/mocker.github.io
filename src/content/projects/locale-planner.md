@@ -4,6 +4,8 @@ summary: "AI-powered planning and workspace orchestration tool built with Materi
 description: "An intuitive, human-centered planning interface designed to bridge complex backend AI agent workflows with organic, ergonomic visual design."
 tags: ["TypeScript", "React", "Google Stitch MCP", "Tailwind CSS", "UI/UX"]
 featured: true
+visibility: hidden
+detailPage: false
 publishDate: 2026-05-01
 role: "Creator & UI/UX Designer"
 hasInteractiveWidget: false

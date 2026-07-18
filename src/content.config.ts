@@ -10,6 +10,11 @@ const projects = defineCollection({
     description: z.string().optional(), // Longer hero subtitle for detail page
     publishDate: z.date().or(z.string().transform((str) => new Date(str))),
     featured: z.boolean().default(false),
+    visibility: z.enum(['featured', 'mention', 'hidden']).default('hidden'),
+    kind: z.string().default('Project'),
+    status: z.string().default('In development'),
+    order: z.number().default(99),
+    detailPage: z.boolean().default(false),
     tags: z.array(z.string()).default([]),
     category: z.string().optional(), // e.g., "Cloud & DevOps", "Decentralized & Edge", "Game Dev & Canvas"
 

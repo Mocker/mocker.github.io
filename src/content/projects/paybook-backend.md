@@ -1,17 +1,24 @@
 ---
-title: "Paybook Financial Aggregator"
-summary: "Designed and built solo the first horizontal scaling backend to aggregate financial data across Mexico, LatAm, US, and Crypto."
-description: "Like Plaid before there was Plaid. Engineered a fault-redundant, horizontal scaling backend platform handling financial account aggregations, tax service (SAT) integrations, utility bill processing, and expense correlations."
-tags: ["PHP", "MongoDB", "JavaScript", "Angular", "D3.js", "Flutter", "TensorFlow", "Linux"]
+title: "Paybook Sync"
+summary: "As Paybook's first engineer on the financial aggregation backbone, I designed and implemented the architecture, scaling model, data pipelines, infrastructure, database schemas, operational tooling, and user-facing components. The platform was operational before the team expanded and supported integrations across Mexico, Colombia, Brazil, the United States, and Europe."
+description: "An employment highlight from seven years as Senior Software Architect at Paybook."
+tags: ["Financial data", "Distributed systems", "Cloud infrastructure", "DevOps"]
 featured: true
+visibility: featured
+kind: "Employment highlight"
+status: "Delivered at Paybook"
+order: 3
+detailPage: false
 publishDate: 2019-12-01
-role: "Senior Software Architect (Solo Builder)"
+role: "Senior Software Architect"
+clientOrCompany: "Paybook"
+timeframe: "2013–2019"
 hasInteractiveWidget: false
 ---
 
 # 🏦 Paybook Financial Aggregator
 
-During my 7-year tenure as Senior Software Architect at Paybook, I **designed and built solo** the first horizontal-scaling backend platform to aggregate financial data across banks and financial services in Mexico, Latin America, the United States, and emerging cryptocurrency ecosystems.
+During my seven-year tenure as Senior Software Architect at Paybook, I was the first engineer working on the financial data aggregation backbone that later became Paybook Sync. I held primary end-to-end responsibility while the initial platform became operational and before the team expanded.
 
 ## 🏗️ Architectural Overview & First Principles
 Before modern financial aggregators became ubiquitous, building reliable financial data conduits required solving complex architectural challenges around horizontal scaling, fault redundancy, and multi-protocol scraping:

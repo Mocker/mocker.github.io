@@ -4,6 +4,8 @@ summary: "High-performance static news feed engineered with real-time edge hydra
 description: "A demonstration of zero-JS static generation combined with selective edge hydration via Cloudflare Pages for instant news aggregation."
 tags: ["Astro SSR", "Cloudflare Pages", "Vanilla CSS Tokens", "Edge Computing"]
 featured: false
+visibility: hidden
+detailPage: false
 publishDate: 2025-08-01
 role: "Full-Stack Engineer"
 hasInteractiveWidget: false

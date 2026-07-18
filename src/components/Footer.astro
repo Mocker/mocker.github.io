@@ -1,82 +1,57 @@
 ---
 const currentYear = new Date().getFullYear();
 ---
-<footer class="footer">
+
+<footer class="site-footer">
   <div class="container footer-content">
-    <div class="footer-links">
-      <a href="https://github.com" target="_blank" rel="noopener noreferrer">GitHub</a>
-      <span class="divider">•</span>
-      <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-      <span class="divider">•</span>
-      <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">Twitter / X</a>
-    </div>
-    
-    <p class="copyright">
-      Designed & Built by <span class="highlight">Ryan Guthrie</span> &middot; &copy; {currentYear}
-    </p>
-    <p class="tech-stack">
-      Powered by <span class="accent">Astro SSG</span>, <span class="accent">Google Stitch</span> &amp; <span class="accent">Cloudflare Pages</span>
-    </p>
+    <p>© {currentYear} Ryan Guthrie. Built with Astro and deployed on Cloudflare.</p>
+    <nav aria-label="Social links">
+      <a href="mailto:ryan@ryanguthrie.com">Email</a>
+      <a href="https://www.linkedin.com/in/ryanguthrie/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      <a href="https://github.com/Mocker" target="_blank" rel="noopener noreferrer">GitHub</a>
+    </nav>
   </div>
 </footer>
 
 <style>
-  .footer {
-    border-top: 1px solid var(--glass-border);
-    padding: 4rem 0 3rem;
-    margin-top: 6rem;
-    background: rgba(15, 17, 21, 0.4);
-    text-align: center;
+  .site-footer {
+    border-top: 1px solid var(--line);
+    padding-block: 2.25rem;
+  }
+
+  .footer-content,
+  nav {
+    display: flex;
+    align-items: center;
   }
 
   .footer-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1rem;
+    justify-content: space-between;
+    gap: 1.5rem;
   }
 
-  .footer-links {
-    display: flex;
-    gap: 1rem;
-    align-items: center;
-    margin-bottom: 0.5rem;
+  p,
+  a {
+    font-size: 0.88rem;
   }
 
-  .footer-links a {
-    font-family: var(--font-display);
-    font-weight: 500;
-    color: var(--text-main);
+  p {
+    color: var(--muted);
   }
 
-  .footer-links a:hover {
-    color: var(--accent-cyan);
+  nav {
+    gap: 1.25rem;
   }
 
-  .divider {
-    color: var(--text-muted);
-    opacity: 0.5;
+  nav a {
+    color: var(--text-soft);
+    font-weight: 650;
   }
 
-  .copyright {
-    color: var(--text-muted);
-    font-size: 0.95rem;
-    margin: 0;
-  }
-
-  .highlight {
-    color: #ffffff;
-    font-weight: 500;
-  }
-
-  .tech-stack {
-    color: var(--text-muted);
-    font-size: 0.85rem;
-    opacity: 0.8;
-    margin: 0;
-  }
-
-  .accent {
-    color: var(--accent-cyan);
+  @media (max-width: 640px) {
+    .footer-content {
+      align-items: flex-start;
+      flex-direction: column;
+    }
   }
 </style>

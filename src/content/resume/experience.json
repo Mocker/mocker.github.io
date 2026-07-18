@@ -1,36 +1,36 @@
 {
-  "summary": "Staff Software Architect & Engineering Lead with 20+ years of experience designing scalable, reliable systems and guiding cross-functional teams from initial planning to production release. A proven technical leader who combines high-level solution architecture, horizontal backend scaling, cloud/edge infrastructure, Linux server security, and modern AI agentic workflows—turning complex organizational requirements into clean, low-maintenance software that just works.",
+  "summary": "Senior software engineer and software architect with 20+ years of experience designing reliable systems and delivering products from initial discovery through production. Combines hands-on full-stack engineering with backend architecture, cloud infrastructure, Linux operations, data systems, developer tooling, and cross-functional technical leadership.",
   "yearsOfExperience": 20,
   "philosophy": [
     {
-      "title": "First-Principles Architecture",
-      "description": "Evaluating technical solutions and system designs through logic-driven, scientific evaluation rather than industry hype or dogma."
+      "title": "Pragmatic architecture",
+      "description": "Choose system boundaries and technologies based on the problem, operational reality, and long-term cost of ownership."
     },
     {
-      "title": "Cross-Functional Engineering Leadership",
-      "description": "Guiding teams from ambiguity to execution without ego—aligning product strategy, analytics, and engineering around reliable delivery."
+      "title": "Collaborative leadership",
+      "description": "Help product, design, analytics, and engineering turn ambiguity into a shared plan and a dependable release."
     },
     {
-      "title": "Low-Energy Maintenance",
-      "description": "Designing architectures with minimal moving parts, favoring zero-bloat static site generation and clean system boundaries over unnecessary complexity."
+      "title": "Operational reliability",
+      "description": "Build observable, testable systems with clear ownership and the fewest moving parts the problem actually requires."
     },
     {
-      "title": "Data Independence & Decentralization",
-      "description": "Decoupling data from proprietary vendor ecosystems, advocating for open protocols like Nostr and independent tools like Rclone."
+      "title": "Hands-on delivery",
+      "description": "Stay close to implementation, testing, tooling, and production behavior so architectural decisions remain grounded."
     }
   ],
   "skills": {
     "featured": [
-      "Solution & System Architecture",
-      "Cross-Functional Engineering Leadership",
-      "Cloud & Edge Infrastructure (AWS/Cloudflare)",
-      "TypeScript / JavaScript (ES6+)",
-      "Golang Backend Systems",
-      "AI Agentic Workflows & Tooling",
-      "Linux Server Security & Hardening",
-      "PostgreSQL / Supabase / MongoDB",
-      "Horizontal Backend Scaling",
-      "Astro & Zero-Bloat Web Architecture"
+      "Software & Solution Architecture",
+      "Cross-Functional Technical Leadership",
+      "Distributed Backend Systems",
+      "Cloud Infrastructure (AWS / Cloudflare)",
+      "TypeScript / JavaScript",
+      "Node.js / Go / Python",
+      "Linux Operations & Security",
+      "PostgreSQL / MongoDB",
+      "CI/CD & Developer Tooling",
+      "Full-Stack Product Delivery"
     ],
     "core": [
       "Software Solution Architecture",
@@ -39,7 +39,7 @@
       "System Security & Audit",
       "Linux Server Administration",
       "High-Throughput API Design",
-      "AI/ML Pipelines & Data Mining",
+      "Data Pipelines & Integrations",
       "Multiplayer & Real-time Servers"
     ],
     "languages": [
@@ -48,7 +48,7 @@
       "Golang",
       "Python",
       "SQL",
-      "Rust (Recent Pivot / Exploring)",
+      "Rust (Exploring)",
       "Bash & PowerShell",
       "PHP & Perl (Legacy Systems)",
       "C# / Unity"
@@ -120,9 +120,9 @@
       "period": "January 2013 – December 2019 (7 years)",
       "location": "Mexico / LatAm / US",
       "highlights": [
-        "\"Like Plaid before there was Plaid\": Designed and built solo the first horizontal-scaling backend platform to aggregate financial data across banks and financial services in Mexico, LatAm, US, and Crypto ecosystems.",
-        "Architected complete system fault redundancy, CI/CD tooling, Linux server configuration, and developer onboarding frameworks.",
-        "Built integrations for Mexican tax services (SAT), automated utility bill processing engines, and high-performance financial data pipelines."
+        "Joined the startup's small team and became the first engineer working on the financial data aggregation backbone that later became Paybook Sync; the platform was operational before the engineering team expanded.",
+        "Designed and implemented the architecture, scaling model, pipelines, cloud infrastructure, database schemas, DevOps tooling, and user-facing components.",
+        "Built and operated integrations across financial institutions in Mexico, Colombia, Brazil, the United States, and Europe, with tooling that helped a very small team respond quickly while minimizing user impact."
       ]
     },
     {

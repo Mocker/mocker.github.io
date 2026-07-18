@@ -6,399 +6,297 @@ const resumeEntry = await getEntry('resume', 'experience');
 const resume = resumeEntry?.data;
 ---
 
-<BaseLayout title="Resume & Career Leadership History | Ryan Guthrie">
-  <div class="resume-page container">
-    <!-- Header & PDF CTA -->
-    <header class="resume-header glass-card">
-      <div class="header-left">
-        <a href="/" class="back-link">← Back to Portfolio</a>
-        <h1 class="name-title">Ryan Guthrie<span class="accent">.</span></h1>
-        <h2 class="role-title">Staff Software Architect &amp; Engineering Lead</h2>
-        <p class="experience-badge">⚡ 20+ Years Systems Architecture &amp; Technical Leadership</p>
+<BaseLayout
+  title="Resume | Ryan Guthrie, Senior Software Engineer & Software Architect"
+  description="Ryan Guthrie's experience, technical strengths, and career history across senior software engineering, architecture, cloud infrastructure, and product delivery."
+>
+  <header class="resume-hero container">
+    <div>
+      <a class="back-link" href="/">← Portfolio</a>
+      <p class="eyebrow">Resume</p>
+      <h1>Ryan Guthrie</h1>
+      <p class="role">Senior Software Engineer · Software Architect</p>
+      <p class="summary">{resume?.summary}</p>
+    </div>
+    <aside class="contact-card">
+      <p>Eugene, Oregon · Remote</p>
+      <a href="mailto:ryan@ryanguthrie.com">ryan@ryanguthrie.com</a>
+      <a href="https://www.linkedin.com/in/ryanguthrie/" target="_blank" rel="noopener noreferrer">linkedin.com/in/ryanguthrie ↗</a>
+      <div class="resume-actions">
+        <a class="btn-primary" href="/assets/Ryan_Guthrie_Resume.pdf" target="_blank">Open PDF</a>
+        <a class="btn-secondary" href="/assets/Ryan_Guthrie_Resume.pdf" download="Ryan_Guthrie_Resume.pdf">Download</a>
       </div>
-      
-      <div class="header-right">
-        <a href="/assets/Ryan_Guthrie_Resume.pdf" download="Ryan_Guthrie_Resume.pdf" class="btn-primary download-btn">
-          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 8px;"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
-          Download Resume PDF
-        </a>
-        <a href="mailto:ryan@ryanguthrie.com" class="btn-secondary">Contact Me</a>
-      </div>
-    </header>
+    </aside>
+  </header>
 
-    <!-- Executive Summary & Philosophy -->
-    <section class="resume-section glass-card" aria-labelledby="summary-title">
-      <h3 id="summary-title" class="section-heading"><span class="num">01.</span> Executive Summary &amp; Leadership Philosophy</h3>
-      <p class="summary-text">{resume?.summary}</p>
-      
-      <div class="philosophy-grid">
-        {resume?.philosophy.map(item => (
-          <div class="philosophy-item">
-            <h4 class="phil-title">💡 {item.title}</h4>
-            <p class="phil-desc">{item.description}</p>
-          </div>
-        ))}
-      </div>
-    </section>
+  <div class="resume-body container">
+    <main class="experience-column">
+      <section aria-labelledby="experience-title">
+        <p class="eyebrow">Experience</p>
+        <h2 id="experience-title">Career history</h2>
+        <div class="timeline">
+          {resume?.experience.map((job) => (
+            <article class="job">
+              <header>
+                <div>
+                  <h3>{job.role}</h3>
+                  <p class="company">{job.company}</p>
+                </div>
+                <div class="job-meta">
+                  <p>{job.period}</p>
+                  {job.location && <p>{job.location}</p>}
+                </div>
+              </header>
+              <ul>
+                {job.highlights.map((highlight) => <li>{highlight}</li>)}
+              </ul>
+            </article>
+          ))}
+        </div>
+      </section>
+    </main>
 
-    <!-- Skills Arsenal: Featured Core vs Extended Vault -->
-    <section class="resume-section glass-card" aria-labelledby="skills-title">
-      <h3 id="skills-title" class="section-heading"><span class="num">02.</span> Technical Arsenal &amp; Systems Capabilities</h3>
-      
-      <!-- Featured Core Weapons -->
-      <div class="featured-skills-box">
-        <h4 class="featured-heading">⚡ Featured Core Stack &amp; Architectural Strengths</h4>
-        <div class="tags">
-          {resume?.skills.featured?.map(skill => <span class="tag-pill featured-tag">{skill}</span>)}
-        </div>
-      </div>
+    <aside class="resume-sidebar">
+      <section aria-labelledby="strengths-title">
+        <p class="eyebrow">Strengths</p>
+        <h2 id="strengths-title">Technical focus</h2>
+        <ul class="skill-list">
+          {resume?.skills.featured?.map((skill) => <li>{skill}</li>)}
+        </ul>
+      </section>
 
-      <div class="skills-grid">
-        <div class="skill-group">
-          <h4 class="group-title">Cloud &amp; Edge Infrastructure</h4>
-          <div class="tags">
-            {resume?.skills.cloudAndDevOps.map(skill => <span class="tag-pill">{skill}</span>)}
-          </div>
+      <section aria-labelledby="approach-title">
+        <p class="eyebrow">Approach</p>
+        <h2 id="approach-title">How I work</h2>
+        <div class="approach-list">
+          {resume?.philosophy.map((item) => (
+            <article>
+              <h3>{item.title}</h3>
+              <p>{item.description}</p>
+            </article>
+          ))}
         </div>
-        
-        <div class="skill-group">
-          <h4 class="group-title">Languages &amp; Scripting</h4>
-          <div class="tags">
-            {resume?.skills.languages.map(skill => <span class="tag-pill">{skill}</span>)}
-          </div>
-        </div>
-        
-        <div class="skill-group">
-          <h4 class="group-title">Web, Edge &amp; Game Dev</h4>
-          <div class="tags">
-            {resume?.skills.webAndEdge.map(skill => <span class="tag-pill">{skill}</span>)}
-          </div>
-        </div>
-        
-        <div class="skill-group">
-          <h4 class="group-title">Core Solution Architecture</h4>
-          <div class="tags">
-            {resume?.skills.core.map(skill => <span class="tag-pill">{skill}</span>)}
-          </div>
-        </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- Chronological Experience -->
-    <section class="resume-section glass-card" aria-labelledby="exp-title">
-      <h3 id="exp-title" class="section-heading"><span class="num">03.</span> Chronological Leadership &amp; Engineering History</h3>
-      
-      <div class="timeline">
-        {resume?.experience.map((job) => (
-          <div class="job-card">
-            <div class="job-header">
-              <div>
-                <h4 class="job-role">{job.role} <span class="company">@ {job.company}</span></h4>
-                {job.location && <p class="job-location">📍 {job.location}</p>}
-              </div>
-              <span class="job-period">{job.period}</span>
-            </div>
-            
-            <ul class="job-highlights">
-              {job.highlights.map(highlight => (
-                <li>{highlight}</li>
-              ))}
-            </ul>
-          </div>
-        ))}
-      </div>
-    </section>
+      <section aria-labelledby="additional-title">
+        <p class="eyebrow">Additional tools</p>
+        <h2 id="additional-title">Working range</h2>
+        <p class="compact-list">{resume?.skills.languages.join(' · ')}</p>
+        <p class="compact-list">{resume?.skills.webAndEdge.join(' · ')}</p>
+      </section>
 
-    <!-- Languages & Background -->
-    <section class="resume-section glass-card" aria-labelledby="lang-title">
-      <h3 id="lang-title" class="section-heading"><span class="num">04.</span> Languages &amp; Background</h3>
-      <div class="lang-grid">
-        {resume?.languages.map(lang => (
-          <div class="lang-card">
-            <h4 class="lang-name">🗣️ {lang.name}</h4>
-            <p class="lang-prof">{lang.proficiency}</p>
-          </div>
-        ))}
-      </div>
-    </section>
+      <section aria-labelledby="languages-title">
+        <p class="eyebrow">Languages</p>
+        <h2 id="languages-title">Communication</h2>
+        <ul class="language-list">
+          {resume?.languages.map((language) => (
+            <li><strong>{language.name}</strong><span>{language.proficiency}</span></li>
+          ))}
+        </ul>
+      </section>
+    </aside>
   </div>
 </BaseLayout>
 
 <style>
-  .resume-page {
-    padding-top: 3rem;
-    padding-bottom: 6rem;
-    display: flex;
-    flex-direction: column;
-    gap: 2.5rem;
-  }
-
-  .resume-header {
-    padding: 3rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 2rem;
+  .resume-hero {
+    display: grid;
+    grid-template-columns: minmax(0, 1.5fr) minmax(280px, 0.55fr);
+    gap: clamp(2.5rem, 8vw, 7rem);
+    padding-block: clamp(4rem, 8vw, 6.5rem);
+    border-bottom: 1px solid var(--line);
   }
 
   .back-link {
     display: inline-block;
-    font-family: var(--font-display);
-    font-weight: 600;
-    color: var(--accent-cyan);
-    margin-bottom: 1rem;
-  }
-
-  .back-link:hover {
-    color: var(--accent-teal);
-    transform: translateX(-4px);
-  }
-
-  .name-title {
-    font-size: clamp(2.5rem, 5vw, 3.5rem);
-    margin-bottom: 0.25rem;
-  }
-
-  .accent {
-    color: var(--accent-cyan);
-  }
-
-  .role-title {
-    color: var(--text-muted);
-    font-size: 1.4rem;
-    font-weight: 600;
-    margin-bottom: 1rem;
-  }
-
-  .experience-badge {
-    display: inline-block;
-    background: rgba(19, 200, 236, 0.15);
-    color: var(--accent-cyan);
-    padding: 0.5rem 1rem;
-    border-radius: var(--radius-full);
-    font-family: var(--font-display);
-    font-weight: 600;
-    font-size: 0.95rem;
-    margin: 0;
-  }
-
-  .header-right {
-    display: flex;
-    gap: 1rem;
-    flex-wrap: wrap;
-    align-items: center;
-  }
-
-  .resume-section {
-    padding: 3rem;
-  }
-
-  .section-heading {
-    font-size: 1.75rem;
-    color: #ffffff;
-    margin-bottom: 2rem;
-    padding-bottom: 1rem;
-    border-bottom: 1px solid var(--glass-border);
-    display: flex;
-    align-items: center;
-  }
-
-  .num {
-    color: var(--accent-cyan);
-    font-family: var(--font-display);
-    margin-right: 0.75rem;
-    font-weight: 500;
-  }
-
-  .summary-text {
-    font-size: 1.2rem;
-    line-height: 1.8;
-    color: var(--text-main);
     margin-bottom: 2.5rem;
+    color: var(--text-soft);
+    font-size: 0.9rem;
+    font-weight: 700;
   }
 
-  .philosophy-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 1.5rem;
+  h1 {
+    margin-top: 0.7rem;
+    font-size: clamp(3.1rem, 7vw, 5.8rem);
+    letter-spacing: -0.055em;
   }
 
-  .philosophy-item {
-    background: rgba(255, 255, 255, 0.03);
-    padding: 1.5rem;
-    border-radius: var(--radius-sm);
-    border: 1px solid rgba(255, 255, 255, 0.05);
+  .role {
+    margin-top: 0.5rem;
+    color: var(--accent);
+    font-size: clamp(1.15rem, 2.3vw, 1.45rem);
+    font-weight: 700;
   }
 
-  .phil-title {
-    font-size: 1.15rem;
-    color: var(--accent-cyan);
-    margin-bottom: 0.75rem;
+  .summary {
+    max-width: 760px;
+    margin-top: 1.6rem;
+    font-size: 1.08rem;
+    line-height: 1.75;
   }
 
-  .phil-desc {
-    font-size: 0.95rem;
-    color: var(--text-muted);
-    margin: 0;
+  .contact-card {
+    align-self: end;
+    display: flex;
+    flex-direction: column;
+    gap: 0.45rem;
+    padding-left: 1.5rem;
+    border-left: 1px solid var(--line-strong);
   }
 
-  /* Featured Skills Box */
-  .featured-skills-box {
-    background: rgba(19, 200, 236, 0.05);
-    border: 1px solid rgba(19, 200, 236, 0.25);
-    border-radius: var(--radius-sm);
-    padding: 1.75rem;
-    margin-bottom: 2.5rem;
+  .contact-card p,
+  .contact-card a:not(.btn-primary):not(.btn-secondary) {
+    font-size: 0.9rem;
   }
 
-  .featured-heading {
-    font-size: 1.2rem;
-    color: var(--accent-cyan);
-    margin-bottom: 1rem;
-  }
-
-  .featured-tag {
-    font-size: 0.95rem;
-    padding: 0.45rem 1rem;
-    background: rgba(19, 200, 236, 0.15);
-    border-color: var(--accent-cyan);
-  }
-
-  .skills-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 2rem;
-  }
-
-  .group-title {
-    font-size: 1.15rem;
-    color: #ffffff;
-    margin-bottom: 1rem;
-    border-left: 3px solid var(--accent-purple);
-    padding-left: 0.75rem;
-  }
-
-  .tags {
+  .resume-actions {
     display: flex;
     flex-wrap: wrap;
-    gap: 0.5rem;
+    gap: 0.6rem;
+    margin-top: 1rem;
+  }
+
+  .resume-body {
+    display: grid;
+    grid-template-columns: minmax(0, 1.55fr) minmax(260px, 0.62fr);
+    gap: clamp(3rem, 8vw, 7rem);
+    padding-block: clamp(4rem, 8vw, 7rem);
+  }
+
+  .experience-column h2,
+  .resume-sidebar h2 {
+    margin-top: 0.55rem;
+    font-size: 2rem;
+    letter-spacing: -0.03em;
   }
 
   .timeline {
-    display: flex;
-    flex-direction: column;
-    gap: 2.5rem;
+    margin-top: 2.25rem;
   }
 
-  .job-card {
-    border-left: 2px solid var(--glass-border);
-    padding-left: 2rem;
-    position: relative;
+  .job {
+    padding-block: 2rem;
+    border-top: 1px solid var(--line);
   }
 
-  .job-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -7px;
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    background: var(--accent-cyan);
-    box-shadow: 0 0 10px var(--accent-cyan);
+  .job header {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(190px, auto);
+    gap: 1.5rem;
   }
 
-  .job-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    flex-wrap: wrap;
-    gap: 1rem;
-    margin-bottom: 1rem;
-  }
-
-  .job-role {
-    font-size: 1.4rem;
-    color: #ffffff;
-    margin-bottom: 0.25rem;
+  .job h3 {
+    font-size: 1.28rem;
   }
 
   .company {
-    color: var(--accent-cyan);
+    margin-top: 0.25rem;
+    color: var(--accent);
+    font-size: 0.96rem;
+    font-weight: 700;
   }
 
-  .job-location {
-    font-size: 0.9rem;
-    color: var(--text-muted);
-    margin: 0;
+  .job-meta {
+    text-align: right;
   }
 
-  .job-period {
-    font-family: var(--font-display);
-    font-size: 0.95rem;
-    color: var(--accent-purple);
-    font-weight: 600;
-    background: rgba(138, 43, 226, 0.12);
-    padding: 0.35rem 0.85rem;
-    border-radius: var(--radius-full);
+  .job-meta p {
+    color: var(--muted);
+    font-size: 0.8rem;
   }
 
-  .job-highlights {
-    list-style: none;
-    padding: 0;
-    margin: 0;
+  .job ul {
+    display: grid;
+    gap: 0.7rem;
+    margin-top: 1.25rem;
+    padding-left: 1.2rem;
+    color: var(--text-soft);
   }
 
-  .job-highlights li {
-    position: relative;
-    padding-left: 1.5rem;
-    margin-bottom: 0.75rem;
-    color: var(--text-main);
-    line-height: 1.7;
+  .job li {
+    padding-left: 0.25rem;
+    font-size: 0.94rem;
   }
 
-  .job-highlights li::before {
-    content: '▹';
-    position: absolute;
-    left: 0;
-    color: var(--accent-cyan);
+  .job li::marker {
+    color: var(--accent);
   }
 
-  .lang-grid {
+  .resume-sidebar {
     display: flex;
-    gap: 2rem;
-    flex-wrap: wrap;
+    flex-direction: column;
+    gap: 3.5rem;
   }
 
-  .lang-card {
-    background: rgba(255, 255, 255, 0.03);
-    padding: 1.5rem 2.5rem;
-    border-radius: var(--radius-sm);
-    border: 1px solid rgba(255, 255, 255, 0.05);
+  .skill-list,
+  .language-list {
+    margin-top: 1.4rem;
+    padding: 0;
+    list-style: none;
   }
 
-  .lang-name {
-    font-size: 1.2rem;
-    color: #ffffff;
-    margin-bottom: 0.25rem;
+  .skill-list li {
+    padding-block: 0.65rem;
+    border-top: 1px solid var(--line);
+    color: var(--text-soft);
+    font-size: 0.9rem;
   }
 
-  .lang-prof {
-    color: var(--accent-cyan);
-    margin: 0;
-    font-weight: 500;
+  .approach-list {
+    display: grid;
+    gap: 1.35rem;
+    margin-top: 1.5rem;
   }
 
-  @media (max-width: 768px) {
-    .resume-header,
-    .resume-section {
-      padding: 1.75rem;
+  .approach-list h3 {
+    font-size: 1rem;
+  }
+
+  .approach-list p,
+  .compact-list {
+    margin-top: 0.45rem;
+    font-size: 0.87rem;
+    line-height: 1.65;
+  }
+
+  .compact-list + .compact-list {
+    margin-top: 1rem;
+  }
+
+  .language-list li {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    padding-block: 0.7rem;
+    border-top: 1px solid var(--line);
+    color: var(--text-soft);
+    font-size: 0.86rem;
+  }
+
+  .language-list span {
+    color: var(--muted);
+    text-align: right;
+  }
+
+  @media (max-width: 850px) {
+    .resume-hero,
+    .resume-body {
+      grid-template-columns: 1fr;
     }
 
-    .job-header {
-      flex-direction: column;
-      align-items: flex-start;
+    .contact-card {
+      align-self: auto;
+    }
+  }
+
+  @media (max-width: 560px) {
+    .job header {
+      grid-template-columns: 1fr;
+      gap: 0.6rem;
+    }
+
+    .job-meta {
+      text-align: left;
     }
   }
 </style>

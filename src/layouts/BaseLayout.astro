@@ -9,32 +9,39 @@ interface Props {
 }
 
 const {
-  title = "Ryan Guthrie | Full-Stack Software Engineer & Designer",
-  description = "Personal portfolio and resume website for Ryan Guthrie, specializing in high-performance static sites, interactive web applications, and accessible digital experiences."
+  title = 'Ryan Guthrie | Senior Software Engineer & Software Architect',
+  description = 'Senior software engineer and software architect with 20+ years of experience building reliable products, platforms, and cloud systems.'
 } = Astro.props;
+
+const canonicalUrl = new URL(Astro.url.pathname, Astro.site ?? 'https://ryanguthrie.com');
+const socialImage = new URL('/assets/modern_pisces_logo.png', Astro.site ?? 'https://ryanguthrie.com');
 ---
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{title}</title>
     <meta name="description" content={description} />
     <meta name="author" content="Ryan Guthrie" />
-    <meta name="generator" content={Astro.generator} />
-    
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" href="/assets/modern_pisces_logo.png" />
-    
-    <!-- Open Graph / Social Meta Tags -->
+    <meta name="theme-color" content="#0a1017" />
+    <link rel="canonical" href={canonicalUrl} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="alternate icon" href="/favicon.ico" />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content={Astro.url} />
-    <meta property="og:image" content="/assets/modern_pisces_logo.png" />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:image" content={socialImage} />
+    <meta property="og:site_name" content="Ryan Guthrie" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={socialImage} />
   </head>
   <body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
     <Header />
     <main id="main-content">
       <slot />

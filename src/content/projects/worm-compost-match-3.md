@@ -4,6 +4,8 @@ summary: "Interactive HTML5 Canvas / WebGL game dev prototype demonstrating proc
 description: "An exploratory game dev project focusing on smooth WebGL rendering, custom physics interactions, and procedural grid generation."
 tags: ["Game Dev", "WebGL", "TypeScript", "HTML5 Canvas", "Procedural Generation"]
 featured: false
+visibility: hidden
+detailPage: false
 publishDate: 2025-11-01
 role: "Game Developer"
 hasInteractiveWidget: false

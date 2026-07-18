@@ -1,11 +1,18 @@
 ---
-title: "Ryan-OS Pipeline Tools"
-summary: "CLI and automation suite designed for agentic software workflows, system diagnostics, and high-velocity engineering pipelines."
-description: "A comprehensive developer toolset built from first principles to automate local workspace orchestration, system diagnostics, and edge deployments across Windows and Linux environments."
-tags: ["Node.js", "TypeScript", "Astro", "Cloudflare Workers", "PowerShell", "Bash"]
+title: "Ryan-OS"
+summary: "The reusable platform behind my independent products. It standardizes project foundations, testing, automation, and delivery so I can move from an idea to a dependable release quickly without trading away reliability."
+description: "A personal product platform for rapid, repeatable delivery."
+tags: ["Platform engineering", "Automation", "Testing", "Cloud delivery"]
 featured: true
+visibility: featured
+kind: "Personal platform"
+status: "Active"
+order: 2
+detailPage: false
 publishDate: 2026-06-01
 role: "Architect & Creator"
+clientOrCompany: "Independent work"
+timeframe: "Ongoing"
 hasInteractiveWidget: false
 ---
 
