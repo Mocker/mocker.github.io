@@ -155,13 +155,22 @@ These names come from the restored site and prior career material. Their presenc
 - Ryan's consulting projects.
 - New World Brands VoIP automation and monitoring.
 - TouchSupport Linux security and operations work.
-- Locale Planner.
 - Lustre.
 - Ryan-OS Pipeline Tools.
-- SereneNews Aggregator.
-- Worm Compost Match-3.
 
 Additional personal, consulting, open-source, game, mobile, backend, infrastructure, automation, and experimental projects should be added as they are recovered.
+
+## Deferred from the first iteration
+
+The following projects remain in the private inventory but are not candidates for first-iteration case studies or public project pages:
+
+| Project | Decision | Reason | Future reconsideration |
+| --- | --- | --- | --- |
+| Locale Planner | Deferred | Not enough implemented or showable material for a credible case study | Reconsider when a demonstrable product, artifacts, and engineering outcomes exist |
+| SereneNews Aggregator | Deferred | Not enough implemented or showable material for a credible case study | Reconsider when the deployed system, ingestion architecture, and performance evidence can be demonstrated |
+| Worm Compost Match-3 Prototype | Deferred | Not enough implemented or showable material for a credible case study | Reconsider when a working demo, source, video, or substantive implementation can be shown |
+
+Their restored source entries should remain untouched while intake is in progress. Once the first-iteration project list is approved, remove them from the public content collection/build in one deliberate implementation pass. Do not delete historical notes or recovered artifacts.
 
 ## Intake template for additional projects
 

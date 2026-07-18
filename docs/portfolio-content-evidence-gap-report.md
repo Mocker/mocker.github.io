@@ -79,6 +79,8 @@ The structured JSON must be reconciled to the LinkedIn source before the public 
 
 ### Locale Planner
 
+**Selection status:** Deferred. Do not use as a first-iteration case study or public project page because there is not yet enough implemented or showable material.
+
 **Current strengths**
 
 - Demonstrates recent product thinking, UI systems, prototyping, and modern TypeScript/React work.
@@ -128,6 +130,8 @@ The current copy risks presenting architectural intent as completed functionalit
 
 ### SereneNews Aggregator
 
+**Selection status:** Deferred. Do not use as a first-iteration case study or public project page because there is not yet enough implemented or showable material.
+
 **Current strengths**
 
 - Potential example of Astro, edge delivery, scheduled ingestion, and performance-conscious frontend work.
@@ -142,6 +146,8 @@ The current copy risks presenting architectural intent as completed functionalit
 The current copy combines SSG, SSR, edge hydration, and scheduled workers without enough implementation evidence to explain the actual system.
 
 ### Worm Compost Match-3 Prototype
+
+**Selection status:** Deferred. Do not use as a first-iteration case study or public project page because there is not yet enough implemented or showable material.
 
 **Current strengths**
 
