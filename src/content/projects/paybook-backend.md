@@ -7,7 +7,7 @@ featured: true
 visibility: featured
 kind: "Employment highlight"
 status: "Delivered at Paybook"
-order: 3
+order: 4
 detailPage: false
 publishDate: 2019-12-01
 role: "Senior Software Architect"

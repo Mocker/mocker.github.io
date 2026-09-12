@@ -10,11 +10,11 @@ tags:
     "Decentralized Identity",
     "Cryptography",
   ]
-featured: true
-visibility: mention
+featured: false
+visibility: hidden
 kind: "Research project"
 status: "Exploratory"
-order: 4
+order: 5
 detailPage: false
 publishDate: 2026-04-01
 role: "Researcher & Designer"

@@ -7,7 +7,7 @@ featured: true
 visibility: featured
 kind: "Personal platform"
 status: "Active"
-order: 2
+order: 3
 detailPage: false
 publishDate: 2026-06-01
 role: "Architect & Creator"
