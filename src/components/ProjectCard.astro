@@ -6,9 +6,11 @@ interface Props {
   kind: string;
   status: string;
   timeframe?: string;
+  liveUrl?: string;
+  githubUrl?: string;
 }
 
-const { title, description, tags, kind, status, timeframe } = Astro.props;
+const { title, description, tags, kind, status, timeframe, liveUrl, githubUrl } = Astro.props;
 ---
 
 <article class="project-card">
@@ -20,6 +22,12 @@ const { title, description, tags, kind, status, timeframe } = Astro.props;
   <h3>{title}</h3>
   {timeframe && <p class="timeframe">{timeframe}</p>}
   <p class="description">{description}</p>
+  {(liveUrl || githubUrl) && (
+    <p class="project-links">
+      {liveUrl && <a href={liveUrl} target="_blank" rel="noopener noreferrer">Visit site <span aria-hidden="true">↗</span></a>}
+      {githubUrl && <a href={githubUrl} target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a>}
+    </p>
+  )}
   <ul class="tags" aria-label={`${title} technologies and focus areas`}>
     {tags.map((tag) => <li>{tag}</li>)}
   </ul>
@@ -63,6 +71,19 @@ const { title, description, tags, kind, status, timeframe } = Astro.props;
     margin-top: 1rem;
     font-size: 0.98rem;
     line-height: 1.7;
+  }
+
+  .project-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.1rem;
+    margin-top: 1.1rem;
+  }
+
+  .project-links a {
+    color: var(--accent-strong);
+    font-size: 0.88rem;
+    font-weight: 650;
   }
 
   .tags {
