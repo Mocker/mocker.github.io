@@ -6,8 +6,8 @@ tags: ["Cloudflare Workers", "Model Context Protocol (MCP)", "Zero-Trust Archite
 featured: true
 visibility: featured
 kind: "Systems architecture"
-status: "Active"
-order: 1
+status: "Preparing for public release"
+order: 2
 detailPage: false
 publishDate: 2026-09-01
 role: "Systems Architect & Solo Developer"

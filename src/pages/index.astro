@@ -9,19 +9,19 @@ const selectedWork = (await getCollection('projects', ({ data }) => data.visibil
 const capabilities = [
   {
     title: 'Architecture & systems',
-    text: 'System boundaries, distributed services, data models, integration design, security, and pragmatic technology decisions.'
+    text: 'System boundaries, distributed services, data models, integration design, security, and pragmatic technology decisions — most recently in PRISM, a Zero-Trust gateway for MCP agent traffic, and Anna, a sovereign AI second brain.'
   },
   {
     title: 'Backend & cloud',
-    text: 'Production APIs, financial data pipelines, Linux, AWS, Cloudflare, databases, CI/CD, fault tolerance, and operational tooling.'
+    text: 'Production APIs, financial data pipelines, Linux, AWS, Cloudflare, databases, CI/CD, fault tolerance, and operational tooling — from the Paybook financial aggregation backbone to Cloudflare Workers at the edge.'
   },
   {
     title: 'Product delivery',
-    text: 'Turning ambiguous goals into shipped software through discovery, iterative planning, hands-on implementation, testing, and release.'
+    text: 'Turning ambiguous goals into shipped software through discovery, iterative planning, hands-on implementation, testing, and release — most recently the Liaison alpha and IncidentPulse.'
   },
   {
     title: 'Technical leadership',
-    text: 'Cross-functional alignment, architecture guidance, mentoring, developer enablement, and clear communication with technical and business teams.'
+    text: 'Cross-functional alignment, architecture guidance, mentoring, developer enablement, and clear communication with technical and business teams — practiced leading initiatives at Earnest and across consulting engagements.'
   }
 ];
 ---
@@ -42,12 +42,12 @@ const capabilities = [
       </div>
       <div class="availability" aria-label="Location and work preference">
         <span>Eugene, Oregon</span>
-        <span>Open to senior engineering and architecture roles</span>
+        <span>Remote-first · Open to senior engineering and architecture roles</span>
       </div>
     </div>
     <aside class="hero-note" aria-label="Professional focus">
       <p class="eyebrow">What I bring</p>
-      <p>Broad technical depth, careful system design, and the judgment to match architecture to the actual problem.</p>
+      <p>Broad technical depth, careful system design, and delivery from discovery to production — most recently edge-native agent infrastructure.</p>
       <dl>
         <div><dt>Experience</dt><dd>20+ years</dd></div>
         <div><dt>Perspective</dt><dd>Product to production</dd></div>
@@ -87,8 +87,7 @@ const capabilities = [
         <h2 id="work-title">A concise view of what I design and deliver.</h2>
       </div>
       <p class="section-intro">
-        These are intentionally brief. Employment work is described at a high level to respect company agreements;
-        independent products and research will grow into deeper case studies as they mature.
+        Current independent work, described briefly — full career history is on the resume page.
       </p>
     </div>
 
@@ -101,6 +100,8 @@ const capabilities = [
           kind={project.data.kind}
           status={project.data.status}
           timeframe={project.data.timeframe}
+          liveUrl={project.data.liveUrl}
+          githubUrl={project.data.githubUrl}
         />
       ))}
     </div>
@@ -123,6 +124,16 @@ const capabilities = [
           <a class="btn-secondary" href="https://www.linkedin.com/in/ryanguthrie/" target="_blank" rel="noopener noreferrer">LinkedIn <span aria-hidden="true">↗</span></a>
         </div>
       </div>
+    </div>
+  </section>
+
+  <section class="section-shell now-section" aria-labelledby="now-title">
+    <div class="container">
+      <p class="eyebrow">Now</p>
+      <p class="now-copy" id="now-title">
+        Building <a href="https://anna.gup.io" target="_blank" rel="noopener noreferrer">Anna</a> — now in private
+        beta — preparing PRISM for open source, and looking for remote senior engineering and architecture roles.
+      </p>
     </div>
   </section>
 
@@ -279,6 +290,27 @@ const capabilities = [
     margin-top: 0.7rem;
     font-size: clamp(2rem, 4vw, 3.25rem);
     letter-spacing: -0.04em;
+  }
+
+  .now-section {
+    border-top: 1px solid var(--line);
+  }
+
+  .now-section .container {
+    padding-block: clamp(2.5rem, 5vw, 4rem);
+  }
+
+  .now-copy {
+    max-width: 900px;
+    margin-top: 0.8rem;
+    font-size: clamp(1.15rem, 2.4vw, 1.5rem);
+    line-height: 1.6;
+    letter-spacing: -0.015em;
+  }
+
+  .now-copy a {
+    color: var(--accent-strong);
+    font-weight: 700;
   }
 
   .career-copy > p {

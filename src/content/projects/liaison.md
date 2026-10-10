@@ -7,7 +7,7 @@ featured: true
 visibility: featured
 kind: "Independent product"
 status: "Working alpha"
-order: 2
+order: 5
 detailPage: false
 publishDate: 2026-07-01
 role: "Product designer & full-stack architect"
