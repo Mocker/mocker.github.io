@@ -300,6 +300,7 @@ def build_pdf(resume: dict) -> None:
     story.extend(section_heading("Professional experience", styles))
     story.extend(
         [
+            job_block(jobs["Independent Product Development"], styles),
             job_block(jobs["Earnest"], styles),
             job_block(jobs["Wizeline"], styles),
             job_block(jobs["ryanguthrie.com"], styles),

@@ -83,6 +83,18 @@
   ],
   "experience": [
     {
+      "company": "Independent Product Development",
+      "role": "Senior Software Engineer / Architect",
+      "period": "January 2024 – Present",
+      "location": "Eugene, OR (Remote)",
+      "highlights": [
+        "Designed, built, and operate Anna (anna.gup.io), an autonomous AI assistant platform: Go/TypeScript services on Cloudflare Workers with an MCP-based tool gateway, persistent memory, and human-approval controls for autonomous actions.",
+        "Built IncidentPulse, a real-time incident-command platform (Serverpod/Dart backend, Flutter web client): incident state machine, signed webhook ingestion with PII redaction, and WebSocket war-room streaming; entered in the Serverpod \"Build Something Real\" hackathon.",
+        "Built Tributary, a claims-and-attestations layer for git workflows on Cloudflare Workers and Artifacts; entered in Cloudflare's \"Build the Next GitHub\" challenge.",
+        "Built PRISM, a zero-trust gateway for AI-agent tool calls (JWT authentication, policy enforcement, audit logging), and They Might Byte, a developer-apparel print-on-demand storefront."
+      ]
+    },
+    {
       "company": "Earnest",
       "role": "Senior Software Engineer",
       "period": "June 2021 – January 2024 (2 years 8 months)",
