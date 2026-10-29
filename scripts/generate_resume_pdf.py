@@ -268,7 +268,7 @@ def build_pdf(resume: dict) -> None:
     jobs = {job["company"]: job for job in resume["experience"]}
     story = [
         Paragraph("Ryan Guthrie", styles["name"]),
-        Paragraph("Senior Software Engineer | Software Architect", styles["headline"]),
+        Paragraph("Senior Software Engineer | Platform &amp; Backend Architect", styles["headline"]),
         Paragraph(
             "Eugene, Oregon (Remote) &nbsp; | &nbsp; "
             '<link href="mailto:ryan@ryanguthrie.com" color="#51616A">'
@@ -288,11 +288,12 @@ def build_pdf(resume: dict) -> None:
     story.extend(section_heading("Core expertise", styles))
     story.append(
         Paragraph(
-            "Software and solution architecture &nbsp; | &nbsp; Distributed backend systems "
-            "&nbsp; | &nbsp; TypeScript, JavaScript, Node.js, Go, Python &nbsp; | &nbsp; "
-            "AWS and Cloudflare &nbsp; | &nbsp; PostgreSQL and MongoDB &nbsp; | &nbsp; "
-            "Linux operations and security &nbsp; | &nbsp; CI/CD and developer tooling "
-            "&nbsp; | &nbsp; Cross-functional technical leadership",
+            "Platform engineering and microservice architecture &nbsp; | &nbsp; "
+            "Distributed backend systems &nbsp; | &nbsp; Fintech systems and secure "
+            "data handling &nbsp; | &nbsp; Node.js, TypeScript, Go, Python &nbsp; | &nbsp; "
+            "AWS and Cloudflare &nbsp; | &nbsp; PostgreSQL, GraphQL, and MongoDB &nbsp; | &nbsp; "
+            "CI/CD, Docker, and developer tooling &nbsp; | &nbsp; Linux operations "
+            "and security &nbsp; | &nbsp; Cross-functional technical leadership",
             styles["skills"],
         )
     )
@@ -300,32 +301,15 @@ def build_pdf(resume: dict) -> None:
     story.extend(section_heading("Professional experience", styles))
     story.extend(
         [
-            job_block(jobs["Independent Product Development"], styles),
             job_block(jobs["Earnest"], styles),
             job_block(jobs["Wizeline"], styles),
-            job_block(jobs["ryanguthrie.com"], styles),
+            job_block(jobs["Paybook"], styles),
             PageBreak(),
             *section_heading("Professional experience, continued", styles),
-            job_block(jobs["Paybook"], styles),
+            job_block(jobs["Independent Product Development"], styles),
+            job_block(jobs["ryanguthrie.com"], styles),
             job_block(jobs["New World Brands, INC"], styles),
             job_block(jobs["TouchSupport"], styles),
-        ]
-    )
-
-    story.extend(section_heading("Selected independent work", styles))
-    story.extend(
-        [
-            Paragraph(
-                "- <b>Liaison:</b> Designed and built a working-alpha product discovery "
-                "workspace that separates confirmed facts from proposals and keeps AI output "
-                "behind explicit human review and approval gates.",
-                styles["project"],
-            ),
-            Paragraph(
-                "- <b>Ryan-OS:</b> Created a reusable platform for project foundations, "
-                "testing, automation, and cloud delivery across independent products.",
-                styles["project"],
-            ),
         ]
     )
 

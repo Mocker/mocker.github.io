@@ -1,5 +1,5 @@
 {
-  "summary": "Senior software engineer and software architect with 20+ years of experience designing reliable systems and delivering products from initial discovery through production. Combines hands-on full-stack engineering with backend architecture, cloud infrastructure, Linux operations, data systems, developer tooling, and cross-functional technical leadership.",
+  "summary": "Senior Software Engineer and Platform Architect with 20+ years of experience, including 11+ years in fintech. At Earnest from December 2019 to January 2024 - first on the Platform team via Wizeline, migrating a monolith to a modern microservice architecture for owned services spanning the full user lifecycle, then as a direct hire leading Growth engineering projects on AWS. Previously spent 7 years at Paybook designing and building its financial-data aggregation platform. Core strength: secure, high-throughput backend platforms - APIs, microservices, data systems, and CI/CD - that product teams build on.",
   "yearsOfExperience": 20,
   "philosophy": [
     {
@@ -21,16 +21,16 @@
   ],
   "skills": {
     "featured": [
-      "Software & Solution Architecture",
-      "Cross-Functional Technical Leadership",
+      "Platform Engineering & Microservice Architecture",
       "Distributed Backend Systems",
+      "Fintech Systems & Secure Data Handling",
       "Cloud Infrastructure (AWS / Cloudflare)",
-      "TypeScript / JavaScript",
-      "Node.js / Go / Python",
+      "TypeScript / JavaScript / Node.js",
+      "Go / Python",
+      "PostgreSQL / GraphQL / MongoDB",
+      "CI/CD, Docker & Developer Tooling",
       "Linux Operations & Security",
-      "PostgreSQL / MongoDB",
-      "CI/CD & Developer Tooling",
-      "Full-Stack Product Delivery"
+      "Cross-Functional Technical Leadership"
     ],
     "core": [
       "Software Solution Architecture",
@@ -83,23 +83,12 @@
   ],
   "experience": [
     {
-      "company": "Independent Product Development",
-      "role": "Senior Software Engineer / Architect",
-      "period": "January 2024 – Present",
-      "location": "Eugene, OR (Remote)",
-      "highlights": [
-        "Designed, built, and operate Anna (anna.gup.io), an autonomous AI assistant platform: Go/TypeScript services on Cloudflare Workers with an MCP-based tool gateway, persistent memory, and human-approval controls for autonomous actions.",
-        "Built IncidentPulse, a real-time incident-command platform (Serverpod/Dart backend, Flutter web client): incident state machine, signed webhook ingestion with PII redaction, and WebSocket war-room streaming; entered in the Serverpod \"Build Something Real\" hackathon.",
-        "Built Tributary, a claims-and-attestations layer for git workflows on Cloudflare Workers and Artifacts; entered in Cloudflare's \"Build the Next GitHub\" challenge.",
-        "Built PRISM, a zero-trust gateway for AI-agent tool calls (JWT authentication, policy enforcement, audit logging), and They Might Byte, a developer-apparel print-on-demand storefront."
-      ]
-    },
-    {
       "company": "Earnest",
       "role": "Senior Software Engineer",
       "period": "June 2021 – January 2024 (2 years 8 months)",
       "location": "United States (Remote)",
       "highlights": [
+        "Joined as a direct hire after 18 months on Earnest's Platform team via Wizeline (below) - 4+ years total with the company.",
         "Collaborated with the Growth team and diverse stakeholders, leading multiple engineering initiatives to optimize customer experience and top-of-the-funnel conversion across organizational boundaries.",
         "Architected projects from initial first-principles planning through reliable production release across cloud stacks, including AWS Lambdas, AWS Gateways, user referral tracking systems, and Next.js static/incremental generation (SSG/ISR).",
         "Partnered directly with product, marketing, lifecycle, and analytics leaders to define requirements and drive engineering execution while mentoring developers and improving CI/CD workflows."
@@ -107,23 +96,14 @@
     },
     {
       "company": "Wizeline",
-      "role": "Senior Software Engineer",
+      "role": "Senior Software Engineer, Platform Team (Client: Earnest)",
       "period": "December 2019 – June 2021 (1 year 7 months)",
       "location": "Guadalajara Area, Mexico & Remote",
       "highlights": [
-        "Served as core platform backend contractor for a major U.S. financial services institution, guiding backend system design and scalability.",
-        "Engineered high-throughput, secure backend microservices using Node.js, AWS, Docker, Jenkins, PostgreSQL, and GraphQL."
-      ]
-    },
-    {
-      "company": "ryanguthrie.com",
-      "role": "Consultant / Programmer",
-      "period": "March 2008 – April 2021 (13 years 2 months)",
-      "location": "Eugene, OR & Remote",
-      "highlights": [
-        "Provided freelance software architecture, custom system development, and Linux security consulting across a 13-year span.",
-        "Executed Linux server provisioning, kernel hardening, automation scripting, and comprehensive vulnerability auditing.",
-        "Architected AWS scaling-on-demand backend APIs, executed complex database migrations (PostgreSQL, MySQL, MongoDB), and engineered custom web/mobile applications and interactive HTML5 Canvas/Unity tools."
+        "Embedded on the Platform team at Earnest, a U.S. fintech company, as a core platform backend engineer - building the shared platform services other product teams built on.",
+        "Major initiative: migrating Earnest from a monolithic architecture to a modern microservice architecture.",
+        "Owned platform services that touched every part of the user lifecycle.",
+        "Engineered high-throughput, secure backend microservices using Node.js, AWS, Docker, Jenkins, PostgreSQL, and GraphQL, guiding backend system design and scalability in a regulated financial-services environment."
       ]
     },
     {
@@ -135,6 +115,26 @@
         "Joined the startup's small team and became the first engineer working on the financial data aggregation backbone that later became Paybook Sync; the platform was operational before the engineering team expanded.",
         "Designed and implemented the architecture, scaling model, pipelines, cloud infrastructure, database schemas, DevOps tooling, and user-facing components.",
         "Built and operated integrations across financial institutions in Mexico, Colombia, Brazil, the United States, and Europe, with tooling that helped a very small team respond quickly while minimizing user impact."
+      ]
+    },
+    {
+      "company": "Independent Product Development",
+      "role": "Senior Software Engineer / Architect",
+      "period": "January 2024 – Present",
+      "location": "Eugene, OR (Remote)",
+      "highlights": [
+        "Designed and operate Anna (anna.gup.io), an autonomous AI assistant platform: Go/TypeScript services on Cloudflare Workers with an MCP-based tool gateway, persistent memory, and human-approval controls for autonomous actions.",
+        "Also built IncidentPulse (real-time incident-command platform), PRISM (zero-trust gateway for AI-agent tool calls), and Tributary (claims-and-attestations layer for git workflows)."
+      ]
+    },
+    {
+      "company": "ryanguthrie.com",
+      "role": "Consultant / Programmer",
+      "period": "March 2008 – April 2021 (13 years 2 months)",
+      "location": "Eugene, OR & Remote",
+      "highlights": [
+        "Provided freelance software architecture, custom system development, and Linux security consulting across a 13-year span.",
+        "Architected AWS scaling-on-demand backend APIs, executed complex database migrations (PostgreSQL, MySQL, MongoDB), and engineered custom web/mobile applications; executed Linux server provisioning, kernel hardening, and vulnerability auditing."
       ]
     },
     {
