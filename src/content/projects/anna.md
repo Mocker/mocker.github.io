@@ -14,6 +14,8 @@ role: "Founder, Architect & Solo Developer"
 clientOrCompany: "Independent work"
 timeframe: "2025–2026"
 liveUrl: "https://anna.gup.io"
+demoImage: "/assets/anna-status.gif"
+demoImageAlt: "Terminal session querying Anna's live daemon status and searching her vault through the MCP portal"
 ---
 
 # Anna

@@ -54,6 +54,8 @@ const selectedWork = (await getCollection('projects', ({ data }) => data.visibil
           liveUrl={project.data.liveUrl}
           githubUrl={project.data.githubUrl}
           evidence={project.data.evidence}
+          demoImage={project.data.demoImage}
+          demoImageAlt={project.data.demoImageAlt}
         />
       ))}
     </div>
