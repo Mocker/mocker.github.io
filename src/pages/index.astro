@@ -6,24 +6,6 @@ import ProjectCard from '../components/ProjectCard.astro';
 const selectedWork = (await getCollection('projects', ({ data }) => data.visibility !== 'hidden'))
   .sort((a, b) => a.data.order - b.data.order);
 
-const capabilities = [
-  {
-    title: 'Architecture & systems',
-    text: 'System boundaries, distributed services, data models, integration design, security, and pragmatic technology decisions — most recently in PRISM, a Zero-Trust gateway for MCP agent traffic, and Anna, a sovereign AI second brain.'
-  },
-  {
-    title: 'Backend & cloud',
-    text: 'Production APIs, financial data pipelines, Linux, AWS, Cloudflare, databases, CI/CD, fault tolerance, and operational tooling — from the Paybook financial aggregation backbone to Cloudflare Workers at the edge.'
-  },
-  {
-    title: 'Product delivery',
-    text: 'Turning ambiguous goals into shipped software through discovery, iterative planning, hands-on implementation, testing, and release — most recently the Liaison alpha and IncidentPulse.'
-  },
-  {
-    title: 'Technical leadership',
-    text: 'Cross-functional alignment, architecture guidance, mentoring, developer enablement, and clear communication with technical and business teams — practiced leading initiatives at Earnest and across consulting engagements.'
-  }
-];
 ---
 
 <BaseLayout>
@@ -32,8 +14,9 @@ const capabilities = [
       <p class="eyebrow">Senior Software Engineer · Software Architect</p>
       <h1 id="hero-title">Hi, I’m Ryan.</h1>
       <p class="hero-summary">
-        For more than 20 years, I’ve worked as a hands-on engineer and architect across product development, distributed
-        backend systems, cloud infrastructure, developer platforms, and technical leadership.
+        Platform backend engineer at Earnest from 2019 to 2024 — first via Wizeline, then direct — where I worked on the
+        monolith-to-microservices migration for services spanning the full user lifecycle. Currently building Anna, a
+        persistent memory layer for AI assistants, and rebuilding PRISM, a Zero-Trust gateway for MCP traffic, on Cloudflare.
       </p>
       <div class="hero-actions">
         <a class="btn-primary" href="/resume">View resume</a>
@@ -45,49 +28,17 @@ const capabilities = [
         <span>Remote-first · Open to senior engineering and architecture roles</span>
       </div>
     </div>
-    <aside class="hero-note" aria-label="Professional focus">
-      <p class="eyebrow">What I bring</p>
-      <p>Broad technical depth, careful system design, and delivery from discovery to production — most recently edge-native agent infrastructure.</p>
-      <dl>
-        <div><dt>Experience</dt><dd>20+ years</dd></div>
-        <div><dt>Perspective</dt><dd>Product to production</dd></div>
-        <div><dt>Style</dt><dd>Hands-on and collaborative</dd></div>
-      </dl>
-    </aside>
   </section>
 
-  <section id="about" class="section-shell about-section">
-    <div class="container">
-      <div class="section-header">
-        <div>
-          <p class="eyebrow">About</p>
-          <h2>Technical range with an architect’s view of the whole system.</h2>
-        </div>
-        <p class="section-intro">
-          My career spans Linux operations, web and mobile development, financial data infrastructure, cloud platforms,
-          and modern TypeScript products. I’m most useful where systems, product decisions, and delivery constraints meet.
-        </p>
-      </div>
-
-      <div class="capability-grid">
-        {capabilities.map((capability) => (
-          <article>
-            <h3>{capability.title}</h3>
-            <p>{capability.text}</p>
-          </article>
-        ))}
-      </div>
-    </div>
-  </section>
 
   <section id="work" class="section-shell container" aria-labelledby="work-title">
     <div class="section-header">
       <div>
         <p class="eyebrow">Selected work</p>
-        <h2 id="work-title">A concise view of what I design and deliver.</h2>
+        <h2 id="work-title">Current and recent work.</h2>
       </div>
       <p class="section-intro">
-        Current independent work, described briefly — full career history is on the resume page.
+        Independent work since 2024. Employment history is in the career section below and on the resume page.
       </p>
     </div>
 
@@ -102,12 +53,15 @@ const capabilities = [
           timeframe={project.data.timeframe}
           liveUrl={project.data.liveUrl}
           githubUrl={project.data.githubUrl}
+          evidence={project.data.evidence}
+          demoImage={project.data.demoImage}
+          demoImageAlt={project.data.demoImageAlt}
         />
       ))}
     </div>
   </section>
 
-  <section class="section-shell career-section">
+  <section id="career" class="section-shell career-section">
     <div class="container career-grid">
       <div>
         <p class="eyebrow">Career</p>
@@ -115,9 +69,11 @@ const capabilities = [
       </div>
       <div class="career-copy">
         <p>
-          Most recently, I worked as a Senior Software Engineer at Earnest and Wizeline. Earlier, I spent seven years as
-          Senior Software Architect at Paybook and more than a decade consulting across software development, infrastructure,
-          security, and data systems.
+          At Earnest (2019–2024, first on Wizeline's Platform Team, then as a direct hire), I worked on the
+          monolith-to-microservices migration; the services I owned touched every part of the user lifecycle. Before that,
+          seven years as Senior Software Architect at Paybook (2013–2019), where I was the first engineer on the financial
+          aggregation backbone, and more than a decade consulting across software development, infrastructure, security,
+          and data systems.
         </p>
         <div class="career-actions">
           <a class="btn-primary" href="/resume">Explore career history</a>
@@ -132,7 +88,8 @@ const capabilities = [
       <p class="eyebrow">Now</p>
       <p class="now-copy" id="now-title">
         Building <a href="https://anna.gup.io" target="_blank" rel="noopener noreferrer">Anna</a> — now in private
-        beta — preparing PRISM for open source, and looking for remote senior engineering and architecture roles.
+        beta — rebuilding PRISM around scoped task tokens (staging is live and passing acceptance checks), and looking
+        for remote senior engineering and architecture roles.
       </p>
     </div>
   </section>
@@ -140,7 +97,7 @@ const capabilities = [
   <section id="contact" class="section-shell container contact-section" aria-labelledby="contact-title">
     <div class="contact-panel">
       <p class="eyebrow">Contact</p>
-      <h2 id="contact-title">Let’s talk about the system you need to build—or the one you need to make better.</h2>
+      <h2 id="contact-title">Get in touch.</h2>
       <p>I’m available for senior software engineering, architecture, and technical leadership opportunities.</p>
       <a class="btn-primary" href="mailto:ryan@ryanguthrie.com">Email Ryan</a>
     </div>
@@ -149,10 +106,7 @@ const capabilities = [
 
 <style>
   .hero {
-    min-height: min(760px, calc(100vh - var(--nav-height)));
     display: grid;
-    grid-template-columns: minmax(0, 1.55fr) minmax(280px, 0.7fr);
-    gap: clamp(3rem, 8vw, 7rem);
     align-items: center;
     padding-block: clamp(5rem, 10vw, 8.5rem);
   }
@@ -209,69 +163,21 @@ const capabilities = [
     background: var(--accent);
   }
 
-  .hero-note {
-    padding-left: 1.75rem;
-    border-left: 1px solid var(--line-strong);
-  }
 
-  .hero-note > p:nth-child(2) {
-    margin-top: 0.9rem;
-    font-size: 1.05rem;
-  }
 
-  dl {
-    margin: 2rem 0 0;
-  }
 
-  dl div {
-    display: grid;
-    grid-template-columns: 0.8fr 1.2fr;
-    gap: 1rem;
-    padding-block: 0.8rem;
-    border-top: 1px solid var(--line);
-  }
 
-  dt {
-    color: var(--muted);
-    font-size: 0.82rem;
-  }
 
-  dd {
-    margin: 0;
-    color: var(--text);
-    font-size: 0.88rem;
-    font-weight: 650;
-  }
 
-  .about-section,
   .career-section {
     border-block: 1px solid var(--line);
     background: rgba(16, 25, 35, 0.46);
   }
 
-  .capability-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    border-block: 1px solid var(--line);
-  }
 
-  .capability-grid article {
-    padding: 1.6rem 1.4rem 1.6rem 0;
-  }
 
-  .capability-grid article + article {
-    padding-left: 1.4rem;
-    border-left: 1px solid var(--line);
-  }
 
-  .capability-grid h3 {
-    font-size: 1.05rem;
-  }
 
-  .capability-grid p {
-    margin-top: 0.75rem;
-    font-size: 0.92rem;
-  }
 
   .projects-grid {
     display: grid;
@@ -340,27 +246,10 @@ const capabilities = [
   }
 
   @media (max-width: 900px) {
-    .hero {
-      grid-template-columns: 1fr;
-    }
 
-    .hero-note {
-      max-width: 580px;
-    }
 
-    .capability-grid {
-      grid-template-columns: repeat(2, 1fr);
-    }
 
-    .capability-grid article:nth-child(3) {
-      padding-left: 0;
-      border-left: 0;
-      border-top: 1px solid var(--line);
-    }
 
-    .capability-grid article:nth-child(4) {
-      border-top: 1px solid var(--line);
-    }
   }
 
   @media (max-width: 700px) {
@@ -385,16 +274,6 @@ const capabilities = [
       margin: 0.3rem 0 0;
     }
 
-    .capability-grid {
-      grid-template-columns: 1fr;
-    }
 
-    .capability-grid article,
-    .capability-grid article + article,
-    .capability-grid article:nth-child(3) {
-      padding: 1.25rem 0;
-      border-left: 0;
-      border-top: 1px solid var(--line);
-    }
   }
 </style>

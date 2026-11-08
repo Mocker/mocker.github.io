@@ -1,19 +1,18 @@
 ---
 title: "IncidentPulse"
-summary: "Open-source realtime incident commander and war room for microservices and SaaS. Built on Serverpod 2 (Dart) with a cross-platform Flutter client: webhook ingress from Sentry, Stripe, GitHub Actions, and AWS; a live WebSocket triage room; and a smart escalation ladder for unacknowledged criticals."
-description: "Lightweight, zero-bloat incident response for solo founders, small teams, and autonomous agents."
+summary: "Realtime incident commander and war room for microservices and SaaS. Built on Serverpod 4.0.1 (Dart) with a cross-platform Flutter client: webhook ingress from Sentry, Stripe, GitHub Actions, and AWS; a live WebSocket triage room; and an escalation ladder for unacknowledged criticals. The hosted service was shut down in November 2026; the incident patterns are being reworked as a Cloudflare Workers module in Tributary."
+description: "Incident response for solo founders, small teams, and autonomous agents. Shut down November 2026."
 tags: ["Dart", "Serverpod", "Flutter", "Incident management", "WebSockets"]
 featured: true
 visibility: featured
 kind: "Independent product"
-status: "Open source"
+status: "Shut down Nov 2026"
 order: 3
 detailPage: false
 publishDate: 2026-09-29
 role: "Creator & Solo Developer"
 clientOrCompany: "Independent work"
 timeframe: "2026"
-githubUrl: "https://github.com/Mocker/IncidentPulse"
 ---
 
 # IncidentPulse

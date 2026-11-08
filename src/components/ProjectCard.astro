@@ -8,9 +8,12 @@ interface Props {
   timeframe?: string;
   liveUrl?: string;
   githubUrl?: string;
+  evidence?: string;
+  demoImage?: string;
+  demoImageAlt?: string;
 }
 
-const { title, description, tags, kind, status, timeframe, liveUrl, githubUrl } = Astro.props;
+const { title, description, tags, kind, status, timeframe, liveUrl, githubUrl, evidence, demoImage, demoImageAlt } = Astro.props;
 ---
 
 <article class="project-card">
@@ -22,6 +25,8 @@ const { title, description, tags, kind, status, timeframe, liveUrl, githubUrl } 
   <h3>{title}</h3>
   {timeframe && <p class="timeframe">{timeframe}</p>}
   <p class="description">{description}</p>
+  {evidence && <p class="evidence">{evidence}</p>}
+  {demoImage && <img class="demo-image" src={demoImage} alt={demoImageAlt ?? ''} loading="lazy" />}
   {(liveUrl || githubUrl) && (
     <p class="project-links">
       {liveUrl && <a href={liveUrl} target="_blank" rel="noopener noreferrer">Visit site <span aria-hidden="true">↗</span></a>}
@@ -65,6 +70,22 @@ const { title, description, tags, kind, status, timeframe, liveUrl, githubUrl } 
     margin-top: 0.45rem;
     color: var(--muted);
     font-size: 0.85rem;
+  }
+
+  .demo-image {
+    width: 100%;
+    margin-top: 1rem;
+    border: 1px solid var(--line);
+    border-radius: var(--radius-sm);
+  }
+
+  .evidence {
+    margin-top: 0.85rem;
+    padding-left: 0.85rem;
+    border-left: 2px solid var(--accent);
+    color: var(--text-soft);
+    font-size: 0.9rem;
+    line-height: 1.6;
   }
 
   .description {

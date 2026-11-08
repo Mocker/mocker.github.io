@@ -1,7 +1,7 @@
 ---
 title: "Anna"
-summary: "A sovereign 24/7 AI second brain that remembers what your AI forgets. Anna connects once via MCP to Claude, Gemini, Cursor, and ChatGPT — one shared memory, goal pacing, and personalization layer across every model — with each user's data isolated in their own Cloudflare pod."
-description: "Your AI forgets everything. Anna remembers."
+summary: "A persistent memory and goal-tracking layer for AI assistants. Anna connects via MCP to Claude, Gemini, Cursor, and ChatGPT, so memory, goals, and learnings carry across models instead of resetting each session. Each user's data is isolated in their own Cloudflare pod."
+description: "Persistent memory and goal tracking that carries across AI models via MCP."
 tags: ["AI agents", "Model Context Protocol (MCP)", "Cloudflare Workers", "TypeScript", "Zero-Trust architecture"]
 featured: true
 visibility: featured
@@ -14,6 +14,8 @@ role: "Founder, Architect & Solo Developer"
 clientOrCompany: "Independent work"
 timeframe: "2025–2026"
 liveUrl: "https://anna.gup.io"
+demoImage: "/assets/anna-status.gif"
+demoImageAlt: "Terminal session querying Anna's live daemon status and searching her vault through the MCP portal"
 ---
 
 # Anna

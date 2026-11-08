@@ -1,18 +1,19 @@
 ---
 title: "PRISM"
-summary: "An edge-native Zero-Trust gateway and policy broker for the Model Context Protocol (MCP). Built on Cloudflare Workers and Hono, PRISM mediates between autonomous AI agents and downstream services, enforcing granular Role-Based Access Control, protocol translation (REST, GraphQL, SQL), asynchronous queue processing, and telemetry redaction."
+summary: "An edge-native Zero-Trust gateway for Model Context Protocol (MCP) traffic, built on Cloudflare Workers and Hono. PRISM is being rebuilt around scoped task tokens (30-minute TTL), a revocation registry, policy-as-code, and deny-by-default egress."
 description: "An edge-native Zero-Trust policy broker and protocol translation gateway for AI agent systems."
 tags: ["Cloudflare Workers", "Model Context Protocol (MCP)", "Zero-Trust Architecture", "TypeScript", "AI Agent Security", "Hono"]
 featured: true
 visibility: featured
 kind: "Systems architecture"
-status: "Preparing for public release"
+status: "In rebuild — staging live"
 order: 2
 detailPage: false
 publishDate: 2026-09-01
 role: "Systems Architect & Solo Developer"
 clientOrCompany: "Independent work"
 timeframe: "2026"
+evidence: "Rebuilt gateway passed 9 of 9 live acceptance checks on staging, including four stolen-token rejection tests."
 hasInteractiveWidget: false
 brainSource:
   workspacePath: "g:/Brain/Do The Things/10_Projects/AllAgentic"

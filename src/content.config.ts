@@ -28,6 +28,9 @@ const projects = defineCollection({
     demoUrl: z.string().url().optional(),
     liveUrl: z.string().url().optional(),
     githubUrl: z.string().url().optional(),
+    evidence: z.string().optional(), // One verifiable fact shown on the card (check result, live artifact, receipt)
+    demoImage: z.string().optional(), // Path to a demo image/GIF shown on the card
+    demoImageAlt: z.string().optional(),
     hasInteractiveWidget: z.boolean().optional(),
 
     // Brain Sync & Export Customization (For active projects in g:\Brain\Do The Things\10_Projects)
